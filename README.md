@@ -36,3 +36,5 @@ Then open http://127.0.0.1:5000
 
 - Never commit secrets. Put anything sensitive in a `.env` file, which is already ignored.
 - Add each week's page or feature and link it from the "Weekly Work" list on the home page.
+
+This Project is for The Course Gin446
