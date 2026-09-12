@@ -9,7 +9,12 @@
     <header>
         <h1>History of the Internet</h1>
     </header>
-
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('web_history') }}">History of the Web</a></li>
+        </ul>
+    </nav>
     <main>
         <section>
             <h2>Introduction</h2>
@@ -45,5 +50,9 @@
             </ul>
         </section>
     </main>
+    <footer>
+             <p>Web Programming — built with Flask and deployed on Render.</p>
+             <p>This website is created for educational purposes only, as part of the GIN446 - Web Programming course, School of Engineering, USEK. (Fall 2026-2027)</p>
+    </footer>
 </body>
 </html>
