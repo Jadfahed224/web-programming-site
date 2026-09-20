@@ -2,48 +2,71 @@
 
 {% block title %}History of the Internet (AI){% endblock %}
 
-{% block content %}
+{% block content %} 
     <h1>History of the Internet</h1>
-        <section>
+    <section>
         <h2>Introduction</h2>
-            <p>The internet is the global network infrastructure connecting a large number of computers and devices around the world.</p>
-        </section>
-        <section>
-            <h2>Key Milestones</h2>
+        <p>The internet is the global network infrastructure connecting a large number of computers and devices around the world.</p>
+    </section>
+
+    <section>
+        <h2>Key Milestones</h2>
+
+        <article>
+            <h3>1969 - ARPANET becomes operational</h3>
+            <p>ARPANET connected its first four nodes in the United States. It demonstrated computer communication over a packet-switched network and became a major foundation of the Internet.</p>
+        </article>
+
+        <article>
+            <h3>1973 - TCP/IP development begins</h3>
+            <p>Robert Kahn and Vint Cerf began developing TCP/IP. It provided a way for different networks to communicate and created the basis for an interconnected network of networks.</p>
+        </article>
+
+        <article>
+            <h3>1983 - ARPANET switches to TCP/IP</h3>
+            <p>ARPANET adopted TCP/IP as its standard protocol suite. This allowed different networks to communicate using a common system and was an important step toward the modern Internet.</p>
+        </article>
+
+        <article>
+            <h3>1986 - NSFNET is launched</h3>
+            <p>The National Science Foundation launched NSFNET to connect universities and research centers. It became an important backbone for the growing Internet in the United States.</p>
+        </article>
+
+        <article>
+            <h3>1990 - ARPANET is decommissioned</h3>
+            <p>ARPANET was shut down as the larger Internet had grown beyond it, with TCP/IP becoming the dominant networking technology.</p>
+        </article>
+
+        <article>
+            <h3>1995 - NSFNET backbone is decommissioned</h3>
+            <p>The NSFNET backbone was shut down as private network providers expanded. This marked the transition toward a commercially operated Internet.</p>
+        </article>
+    </section>
+
+    <section>
+        <h2>3 Key Internet Technologies</h2>
+        <article>
+            <h3>Packet Switching</h3>
+            <p>Divides data into small packets that travel through a network and are reassembled at the destination. It was fundamental to ARPANET.</p>
+        </article>
+        <article>
+            <h3>TCP/IP</h3>
+            <p>A group of protocols that allows different networks to communicate. IP handles addressing and routing, while TCP helps provide reliable data delivery.</p>
+        </article>
+        <article>
+            <h3>DNS (Domain Name System)</h3>
+            <p>Converts human-readable domain names into IP addresses, making Internet resources easier to access.</p>
+        </article>
+    </section>
+
+    <section>
+        <h2>Reliable Sources</h2>
             <ul>
-                <li><strong>1969 - ARPANET becomes operational:</strong> ARPANET connected its first four nodes in the United States. It demonstrated computer communication over a packet-switched network and became a major foundation of the Internet.</li>
-                <li><strong>1973 - TCP/IP development begins:</strong> Robert Kahn and Vint Cerf began developing TCP/IP. It provided a way for different networks to communicate and created the basis for an interconnected network of networks.</li>
-                <li><strong>1983 - ARPANET switches to TCP/IP:</strong> ARPANET adopted TCP/IP as its standard protocol suite. This allowed different networks to communicate using a common system and was an important step toward the modern Internet.</li>
-                <li><strong>1986 - NSFNET is launched:</strong> The National Science Foundation launched NSFNET to connect universities and research centers. It became an important backbone for the growing Internet in the United States.</li>
-                <li><strong>1990 - ARPANET is decommissioned:</strong> ARPANET was shut down as the larger Internet had grown beyond it, with TCP/IP becoming the dominant networking technology.</li>
-                <li><strong>1995 - NSFNET backbone is decommissioned:</strong> The NSFNET backbone was shut down as private network providers expanded. This marked the transition toward a commercially operated Internet.</li>
+                <li><a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/">Internet Society - Short History of the Internet</a></li>
+                <li><a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/">Internet Society - History of the Internet &amp; Related Networks</a></li>
+                <li><a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">Internet Society - A Brief History of the Internet</a></li>
+                <li><a href="https://www.darpa.mil/news/features/arpanet">DARPA - ARPANET</a></li>
+                <li><a href="https://www.nsf.gov/impacts/internet">U.S. National Science Foundation - Birth of the Commercial Internet</a></li>
             </ul>
-        </section>
-
-        <section>
-            <h2>3 Key Internet Technologies</h2>
-            <dl>
-                <dt><strong>Packet Switching</strong></dt>
-                <dd>Divides data into small packets that travel through a network and are reassembled at the destination. It was fundamental to ARPANET.</dd>
-
-                <dt><strong>TCP/IP</strong></dt>
-                <dd>A group of protocols that allows different networks to communicate. IP handles addressing and routing, while TCP helps provide reliable data delivery.</dd>
-
-                <dt><strong>DNS (Domain Name System)</strong></dt>
-                <dd>Converts human-readable domain names into IP addresses, making Internet resources easier to access.</dd>
-            </dl>
-        </section>
-
-        <section>
-            <h2>Reliable Sources</h2>
-            <nav>
-                <ul>
-                    <li><a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/">Internet Society - Short History of the Internet</a></li>
-                    <li><a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/">Internet Society - History of the Internet &amp; Related Networks</a></li>
-                    <li><a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">Internet Society - A Brief History of the Internet</a></li>
-                    <li><a href="https://www.darpa.mil/news/features/arpanet">DARPA - ARPANET</a></li>
-                    <li><a href="https://www.nsf.gov/impacts/internet">U.S. National Science Foundation - Birth of the Commercial Internet</a></li>
-                </ul>
-            </nav>
-        </section>
+    </section>
 {% endblock %}

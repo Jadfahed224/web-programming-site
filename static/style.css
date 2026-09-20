@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #171717;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background: #111111;
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
+    border-bottom: 4px solid #e10600;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+header p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: #dddddd;
+}
+
+/* Navigation */
+nav {
+    background: #1c1c1c;
+    padding: 10px 15px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+nav a {
+    display: block;
+    padding: 9px 13px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+nav a:hover {
+    background: #e10600;
+    color: white;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Main Page Title */
+main > h1 {
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+/* Sections */
+main section {
+    background: white;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    border-left: 5px solid #e10600;
+    border-radius: 8px;
+}
+
+/* Section Titles */
+main h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    color: #171717;
+}
+
+/* Subtitles */
+main h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #c00000;
+    font-size: 18px;
+}
+
+/* Articles */
+main article {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+main article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Paragraphs */
+main p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Links */
+main a {
+    color: #b00000;
+    font-weight: 600;
+}
+
+main a:hover {
+    color: #e10600;
+}
+
+/* Lists */
+main ul,
+main ol {
+    padding-left: 25px;
+}
+
+main li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    background: #111111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 4px solid #e10600;
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #dddddd;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    header {
+        padding: 22px 15px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 8px 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    main > h1 {
+        font-size: 26px;
+    }
+
+    main section {
+        padding: 17px;
+        margin-bottom: 16px;
+    }
+
+    main h2 {
+        font-size: 21px;
+    }
+
+    main h3 {
+        font-size: 17px;
+    }
+
+    footer {
+        padding: 17px 12px;
+    }
+}
