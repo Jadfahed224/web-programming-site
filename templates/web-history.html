@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History_of_the_Web_Fahed_Jad</title>
-</head>
-<body>
-    <header>
-        <h1>History of the Web</h1>
-        <nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/internet-history">History of the Internet</a></li>
-    </ul>
-</nav>
-    </header>
-    <main>
+{% extends "base.html" %}
+
+{% block title %}History of the Web{% endblock %}
+
+{% block content %}
+    <h1>History of the Web</h1>
         <section>
             <h2>Introduction</h2>
                 <p>The Web is a service that runs on top of the internet and it is a collection of digital pages stored on computers across the world and it can be accessed over the internet by using a browser.</p>
@@ -24,7 +12,7 @@
             <h2>Key Milestones</h2>
             <ul>
                 <article>
-                     <li><h3>1989 - The Web is proposed:</h3> Tim Berners-Lee proposed a global hypertext system at CERN. This became the starting point for the World Wide Web.</li>
+                    <li><h3>1989 - The Web is proposed:</h3> Tim Berners-Lee proposed a global hypertext system at CERN. This became the starting point for the World Wide Web.</li>
                 </article>
                 <article>
                     <li><h3>1990 - First Web browser and server:</h3> Berners-Lee created the first Web browser/editor and Web server. The Web became a working system.</li>
@@ -33,14 +21,14 @@
                     <li><h3>1991 - Web becomes available beyond CERN:</h3> The Web software was made available on the Internet. Other researchers could begin using and developing the Web.</li>
                 </article>
                 <article>
-                     <li><h3>1993 - Web enters the public domain:</h3> CERN made the Web software available without licensing fees, helping the Web spread more widely.</li>
+                    <li><h3>1993 - Web enters the public domain:</h3> CERN made the Web software available without licensing fees, helping the Web spread more widely.</li>
                 </article>
-                 <article>
+                <article>
                     <li><h3>1993 - Mosaic browser released:</h3> NCSA released the Mosaic browser. Its user-friendly interface helped make the Web more popular and easier to use.</li>
                 </article>
                 <article>
                     <li><h3>1994 - W3C is founded:</h3> Tim Berners-Lee founded the World Wide Web Consortium (W3C). It helped develop common Web standards so websites and browsers could work consistently.</li>
-                 </article>
+                </article>
              </ul>
         </section>
         <section>
@@ -67,10 +55,5 @@
                 <li><a href="https://www.ncsa.illinois.edu/about/history/">History</a> - NCSA / University of Illinois</li>
             </ul>
         </section>
-    </main>
-    <footer>
-             <p>Web Programming — built with Flask and deployed on Render.</p>
-             <p>This website is created for educational purposes only, as part of the GIN446 - Web Programming course, School of Engineering, USEK. (Fall 2026-2027)</p>
-    </footer>
-</body>
-</html>
+ 
+    {% endblock %}
