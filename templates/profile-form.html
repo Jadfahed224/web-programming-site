@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}Engineering Student Profile{% endblock %}
+{% block content %}
+
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='form_style.css') }}"/>
+    {% endblock %}
+    
+<h2>Engineering Student Profile</h2>
+    <p>Complete this form to provide information about your academic background, technical skills, internship experience, and Final Year Project preferences.</p>
+    
+<form action="{{ url_for('submit_profile')}}"
+      method="post">
+
+<label for="StdId">Student ID:</label>
+<input type="text" id="StdId" name="student_id" maxlength="9" size="9" placeholder="123456789" pattern="[0-9]{9}" required><br><br>
+
+<label for="FullName">Name:</label>
+<input type="text" id="FullName" name="fullname" placeholder="First Name & Last Name" required><br><br>
+
+<label for="email">Usek Email:</label>
+<input type="email" id="email" name="email" placeholder="firstname.lastname@net.usek.edu.lb"  pattern="[a-zA-Z]+\.[a-zA-Z]+@net\.usek\.edu\.lb" size="40" required><br><br>
+
+<label for="phone">Mobile Number:</label>
+<input type="tel" id="phone" name="phone" placeholder="+961 xx/xxxxxx" pattern="\+961 [0-9]{2}/[0-9]{6}" required><br><br>
+
+<label for="birthdate">Date of Birth:</label>
+<input type="date" id="birthdate" name="birthdate" placeholder="yyyy-mm-dd" max="2010-01-01" min="1990-01-01" required><br><br>
+
+<label for="GithubUrl">GitHub:</label>
+<input type="url" id="GithubUrl" name="portfolio" placeholder="https://github.com/username" pattern="https://github\.com/[a-zA-Z0-9-]+" required><br><br>
+
+<label for="RenderLink">GIN446 website:</label>
+<input type="url" id="RenderLink" name="gin446" placeholder="Your RENDER website link" pattern="https://[a-zA-Z0-9-]+\.onrender\.com" required><br><br>
+
+<label for="EngMajor">Engineering Major:</label>
+<select id="EngMajor" name="major" required>
+    <option value="selection">Select your major</option>
+    <option value="Computer">Computer Engineering</option>
+    <option value="Electrical">Electrical Engineering</option>
+    <option value="Telecom">Telecom Engineering</option>
+    <option value="Biomedical">Biomedical Engineering</option>
+</select><br><br>
+
+<label for="GPA">Current GPA/100:</label>
+<input type="number" id="GPA" name="gpa" min="0" max="100" step="0.01" required><br><br>
+
+<label for="CreditsCompleted">Credits Completed:</label>
+<input type="number" id="CreditsCompleted" name="credits" min="0" max="146" step="1" required><br><br>
+
+<label for="ExpectedGraduation">Expected Graduation:</label>
+<input type="radio" id="ExpectedGraduation" name="graduation" value="Spring" required>
+<label for="ExpectedGraduation">Spring</label>
+<input type="radio" id="ExpectedGraduation" name="graduation" value="Summer" required>
+<label for="ExpectedGraduation">Summer</label>
+<input type="radio" id="ExpectedGraduation" name="graduation" value="Fall" required>
+<label for="ExpectedGraduation">Fall</label><br><br>
+
+<label for="ExpectedGraduationMandY">Expected Graduation Month and Year:</label>
+<input type="month" id="ExpectedGraduationMandY" name="graduation_month" min="2010-01" max="2040-01" required><br><br>
+
+<label for="Internship">Have you completed an engineering internship?</label>
+<input type="radio" id="Internship" name="internship_completed" value="Yes" required>
+<label for="Internship">Yes</label>
+<input type="radio" id="Internship" name="internship_completed" value="No" required>
+<label for="Internship">No</label><br><br>
+
+<label for="experience">Select all areas in which you have experience:</label>
+<input type="checkbox" id="programming" name="skills" value="Programming">
+<label for="programming">Programming</label><br>
+<input type="checkbox" id="embedded-systems" name="skills" value="Embedded Systems">
+<label for="embedded-systems">Embedded Systems</label><br>
+<input type="checkbox" id="electronics" name="skills" value="electronics">
+<label for="electronics">Electronics</label><br>
+<input type="checkbox" id="computer-networks" name="skills" value="Computer Networks">
+<label for="computer-networks">Computer Networks</label><br>
+<input type="checkbox" id="telecommunications" name="skills" value="Telecommunications">
+<label for="telecommunications">Telecommunications</label><br>
+<input type="checkbox" id="biomedical-instrumentation" name="skills" value="Biomedical Instrumentation">
+<label for="biomedical-instrumentation">Biomedical Instrumentation</label><br>
+<input type="checkbox" id="artificial-intelligence" name="skills" value="Artificial Intelligence / Machine Learning">
+<label for="artificial-intelligence">Artificial Intelligence / Machine Learning</label><br>
+<input type="checkbox" id="signal-processing" name="skills" value="Signal Processing">
+<label for="signal-processing">Signal Processing</label><br><br>
+
+<label for="PrimaryProgLang">Primary Programming Language:</label>
+<input list="languages" id="PrimaryProgLang" name="language" placeholder="Select or type your primary programming language" required>
+<datalist id="languages">
+    <option value="Python">
+    <option value="C++">
+    <option value="Java">
+    <option value="C#">
+    <option value="JavaScript">
+    <option value="MATLAB">
+    <option value="R">
+    <option value="Go">
+    <option value="Ruby">
+    <option value="Swift">
+</datalist><br><br>
+
+<label for="EngSoftwareUsed">Engineering Software Used:</label>
+<select id="EngSoftwareUsed" name="software" multiple required>
+    <option value="selection">Select software used</option>
+    <option value="MATLAB">MATLAB</option>
+    <option value="LabVIEW">LabVIEW</option>
+    <option value="AutoCAD">AutoCAD</option>
+    <option value="SolidWorks">SolidWorks</option>
+    <option value="Multisim">Multisim</option>
+    <option value="PSpice">PSpice</option>
+    <option value="Simulink">Simulink</option>
+    <option value="Altium Designer">Altium Designer</option>
+    <option value="ANSYS">ANSYS</option>
+    <option value="COMSOL Multiphysics">COMSOL Multiphysics</option>
+</select><br>
+<p>Hold Ctrl (Windows) or Cmd (Mac) to select several options</p><br>
+
+
+<label for="ProjectTitle">Proposed Project Title:</label>
+<input type="text" id="ProjectTitle" name="project_title" placeholder="Enter a tentative project title"><br><br>
+
+<label for="ProjectArea">Preferred Project Area:</label>
+<select id="ProjectArea" name="project_area" required>
+    <optgroup label="Computer Engineering">
+        <option value="AI">Artificial Intelligence</option>
+        <option value="Web Applications">Web Applications</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+        <option value="Internet of Things">Internet of Things (IoT)</option>
+    </optgroup>
+    <optgroup label="Electrical Engineering">
+        <option value="Power Systems">Power Systems</option>
+        <option value="Renewable Energy">Renewable Energy</option>
+        <option value="Control Systems">Control Systems</option>
+    </optgroup>
+    <optgroup label="Biomedical Engineering">
+        <option value="Medical Imaging">Medical Imaging</option>
+        <option value="Biosensors">Biosensors</option>
+        <option value="Medical Devices">Medical Devices</option>
+    </optgroup>
+    <optgroup label="Telecommunications Engineering">
+        <option value="Wireless Communications">Wireless Communications</option>
+        <option value="5G / 6G Networks">5G / 6G Networks</option>
+    </optgroup>
+</select><br><br>
+
+<label for="ProjectDescription">Project Description:</label>
+<textarea id="ProjectDescription" name="description" rows="4" cols="40" placeholder="Describe the problem, proposed solution, and expected outcome" required></textarea><br><br>
+
+<label for="TeamSize">Preferred Team Size:</label>
+<input type="number" id="TeamSize" name="team_size" min="1" max="5" placeholder="Enter the number of team members" required><br><br>
+
+<label for="ProjDashboardColor">Project Dashboard Color:</label>
+<select id="ProjDashboardColor" name="project_color" required>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="purple">Purple</option>
+    <option value="orange">Orange</option>
+</select><br><br>
+
+<label for="MeetingDate">Preferred Meeting Date:</label>
+<input type="date" id="MeetingDate" name="meeting_date" placeholder="yyyy-mm-dd" min="2026-09-01" max="2040-01-01" required><br><br>
+
+<label for="MeetingTime">Preferred Meeting Time:</label>
+<input type="time" id="MeetingTime" name="meeting_time" placeholder="HH:MM" required><br><br>
+
+<input type="checkbox" id="Confirmation" name="confirmation" required>
+<label for="Confirmation">I confirm that the information provided is accurate.</label>
+
+<input type="submit" id="submit" value="Submit Profile">
+<input type="reset" id="reset" value="Clear Form">
+
+<input type="hidden" name="form_version" value="2026-2027">
+
+</form>
+{% endblock %}
