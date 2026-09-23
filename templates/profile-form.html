@@ -55,23 +55,29 @@
     <label for="CreditsCompleted">Credits Completed:</label>
     <input type="number" id="CreditsCompleted" name="credits" min="0" max="148" step="1" required><br><br>
 
-    <label for="ExpectedGraduation">Expected Graduation:</label>
-    <input type="radio" id="ExpectedGraduation" name="graduation" value="Spring" required>
-    <label for="ExpectedGraduation">Spring</label>
-    <input type="radio" id="ExpectedGraduation" name="graduation" value="Summer" required>
-    <label for="ExpectedGraduation">Summer</label>
-    <input type="radio" id="ExpectedGraduation" name="graduation" value="Fall" required>
-    <label for="ExpectedGraduation">Fall</label><br><br>
+
+    <fieldset>
+            <legend>Expected Graduation:</legend>
+        <input type="radio" id="ExpectedGraduation" name="graduation" value="Spring" required>
+        <label for="ExpectedGraduation">Spring</label>
+        <input type="radio" id="ExpectedGraduation" name="graduation" value="Summer" required>
+        <label for="ExpectedGraduation">Summer</label>
+        <input type="radio" id="ExpectedGraduation" name="graduation" value="Fall" required>
+        <label for="ExpectedGraduation">Fall</label><br>
+    </fieldset>
 
     <label for="ExpectedGraduationMandY">Expected Graduation Month and Year:</label>
     <input type="month" id="ExpectedGraduationMandY" name="graduation_month" min="2010-01" max="2040-01" required><br><br>
 
-    <label for="Internship">Have you completed an engineering internship?</label>
-    <input type="radio" id="Internship" name="internship_completed" value="Yes" required>
-    <label for="Internship">Yes</label>
-    <input type="radio" id="Internship" name="internship_completed" value="No" required>
-    <label for="Internship">No</label><br><br>
-</fieldset>
+
+    <fieldset>
+            <legend>Have you completed an engineering internship?</legend>
+
+        <input type="radio" id="Internship" name="internship_completed" value="Yes" required>
+        <label for="Internship">Yes</label>
+        <input type="radio" id="Internship" name="internship_completed" value="No" required>
+        <label for="Internship">No</label><br>
+    </fieldset>
 
 <fieldset>
         <legend>Technical Background</legend>
