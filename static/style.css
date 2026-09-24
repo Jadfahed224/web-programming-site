@@ -46,7 +46,7 @@ body {
     margin: 0; /* Removes the default outside margin */
     font-family: var(--font-body); /* Uses the body font variable */
     font-size: 16px; /* Sets the normal text size */
-    line-height: 1.6; /* Sets spacing between lines */
+    line-height: 1.6; /* Sets spacing between lines */ 
     color: var(--color-text); /* Sets the text color */
     background: var(--color-background); /* Sets the page background */
     min-height: 100vh; /* Makes the body at least the full screen height */
