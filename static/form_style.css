@@ -23,6 +23,8 @@
     --container-width: 900px;
 }
 
+
+/* Page headings */
 h2 {
     max-width: var(--container-width);
     margin: 25px auto 6px;
@@ -35,6 +37,8 @@ h2 {
     border-bottom: 3px solid var(--color-red);
 }
 
+
+/* Page description */
 h2 + p {
     max-width: var(--container-width);
     margin: 0 auto 15px;
@@ -43,7 +47,10 @@ h2 + p {
     color: var(--color-text);
 }
 
+
+/* Form */
 form {
+    width: 100%;
     max-width: var(--container-width);
     margin: 0 auto 25px;
     padding: 18px 24px;
@@ -54,11 +61,17 @@ form {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+
+/* Keeps form line breaks working */
 form br {
     display: block;
 }
 
+
+/* Fieldsets */
 fieldset {
+    min-width: 0;
+    width: 100%;
     margin: 0 0 15px;
     padding: 10px 15px;
     border: 1px solid var(--color-border);
@@ -66,14 +79,20 @@ fieldset {
     background: var(--color-white);
 }
 
+
+/* Fieldset legends */
 legend {
+    max-width: 100%;
     padding: 0 6px;
     font-family: var(--font-heading);
     font-size: 16px;
     font-weight: 800;
     color: var(--color-text);
+    overflow-wrap: anywhere;
 }
 
+
+/* Labels */
 label {
     display: block;
     margin-top: 8px;
@@ -82,7 +101,9 @@ label {
     font-size: 15px;
     font-weight: 700;
     color: var(--color-text);
+    overflow-wrap: anywhere;
 }
+
 
 label[for="ExpectedGraduation"],
 label[for="Internship"],
@@ -91,6 +112,8 @@ label[for="experience"] {
     margin-bottom: 4px;
 }
 
+
+/* Text inputs, selects and textarea */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -100,9 +123,11 @@ input[type="date"],
 input[type="month"],
 input[type="time"],
 input[type="color"],
+input[list],
 select,
 textarea {
     width: 100%;
+    max-width: 100%;
     padding: 7px 10px;
     box-sizing: border-box;
     font-family: var(--font-body);
@@ -114,12 +139,16 @@ textarea {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+
+/* Color input */
 input[type="color"] {
     height: 38px;
     padding: 3px;
     cursor: pointer;
 }
 
+
+/* Focus effect */
 input:focus,
 select:focus,
 textarea:focus {
@@ -128,20 +157,27 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.15);
 }
 
+
+/* Textarea */
 textarea {
     min-height: 90px;
     resize: vertical;
 }
 
+
+/* Multiple select */
 select[multiple] {
     height: 130px;
     padding: 5px;
 }
 
+
+/* Radio and checkbox inputs */
 input[type="radio"],
 input[type="checkbox"] {
     display: inline-block;
     width: auto;
+    max-width: none;
     margin-top: 3px;
     margin-right: 5px;
     accent-color: var(--color-red);
@@ -149,10 +185,13 @@ input[type="checkbox"] {
     vertical-align: middle;
 }
 
+
+/* Radio and checkbox labels */
 input[type="radio"] + label,
 input[type="checkbox"] + label {
     display: inline-block;
     width: auto;
+    max-width: calc(100% - 30px);
     margin-top: 3px;
     margin-right: 15px;
     margin-bottom: 4px;
@@ -162,6 +201,8 @@ input[type="checkbox"] + label {
     vertical-align: middle;
 }
 
+
+/* Submit and reset buttons */
 input[type="submit"],
 input[type="reset"] {
     display: inline-block;
@@ -177,10 +218,13 @@ input[type="reset"] {
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
+
+/* Submit button */
 input[type="submit"] {
     background-color: var(--color-red);
     color: var(--color-white);
 }
+
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
@@ -188,10 +232,13 @@ input[type="submit"]:focus {
     transform: translateY(-2px);
 }
 
+
+/* Reset button */
 input[type="reset"] {
     background-color: var(--color-nav);
     color: var(--color-white);
 }
+
 
 input[type="reset"]:hover,
 input[type="reset"]:focus {
@@ -199,31 +246,117 @@ input[type="reset"]:focus {
     transform: translateY(-2px);
 }
 
+
+/* Mobile */
 @media (max-width: 700px) {
+
+    /* Page heading */
     h2 {
         margin-top: 20px;
         padding: 0 15px 5px;
         font-size: 26px;
+        overflow-wrap: anywhere;
     }
 
+
+    /* Page description */
     h2 + p {
         margin-bottom: 10px;
         padding: 0 15px;
+        overflow-wrap: anywhere;
     }
 
+
+    /* Form */
     form {
-        margin: 0 15px 20px;
-        padding: 14px;
+        width: auto;
+        max-width: none;
+        margin: 0 10px 20px;
+        padding: 12px;
     }
 
+
+    /* Fieldsets */
     fieldset {
+        min-width: 0;
+        width: 100%;
         padding: 8px 10px;
     }
 
+
+    /* Legends */
+    legend {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* Labels */
+    label {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* Text inputs */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="number"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="color"],
+    input[list],
+    select,
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    /* Color input */
+    input[type="color"] {
+        height: 38px;
+    }
+
+
+    /* Multiple select */
+    select[multiple] {
+        height: 120px;
+    }
+
+
+    /* Radio and checkbox labels */
+    input[type="radio"] + label,
+    input[type="checkbox"] + label {
+        max-width: calc(100% - 30px);
+        margin-right: 5px;
+        font-size: 14px;
+    }
+
+
+    /* Buttons */
     input[type="submit"],
     input[type="reset"] {
         width: 100%;
         margin-right: 0;
         margin-bottom: 8px;
+        padding: 10px;
+    }
+
+
+    /* Prevents long text from causing horizontal overflow */
+    form,
+    fieldset,
+    legend,
+    label,
+    input,
+    select,
+    textarea {
+        overflow-wrap: anywhere;
     }
 }
