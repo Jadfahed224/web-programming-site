@@ -1,4 +1,3 @@
-/* :root stores reusable values (variables) for the whole stylesheet */
 :root {
     --color-red: #e10600;
     --color-red-dark: #b00000;
@@ -32,19 +31,16 @@
 
 /* General styles for the page */
 
-/* Selects every HTML element */
 * {
     box-sizing: border-box;
 }
 
 
-/* Styles the HTML document */
 html {
     scroll-behavior: smooth;
 }
 
 
-/* Styles the entire page body */
 body {
     margin: 0;
     font-family: var(--font-body);
@@ -61,7 +57,6 @@ body {
 
 /* Header styles */
 
-/* Selects the header element */
 header {
     background: var(--color-black);
     color: var(--color-white);
@@ -71,7 +66,6 @@ header {
 }
 
 
-/* Selects h1 elements inside the header */
 header h1 {
     margin: 0;
     font-family: var(--font-heading);
@@ -81,7 +75,6 @@ header h1 {
 }
 
 
-/* Selects paragraphs inside the header */
 header p {
     margin: 6px 0 0;
     font-size: 15px;
@@ -91,14 +84,17 @@ header p {
 
 /* Navigation styles */
 
-/* Selects the navigation bar */
 nav {
     background: var(--color-nav);
     padding: 10px 15px;
+
+    /* Keeps navigation visible while scrolling */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 
-/* Selects unordered lists inside navigation */
 nav ul {
     list-style: none;
     margin: 0;
@@ -112,7 +108,6 @@ nav ul {
 }
 
 
-/* Selects links inside navigation */
 nav a {
     display: block;
     padding: 7px 10px;
@@ -129,7 +124,6 @@ nav a {
 }
 
 
-/* Applies when a navigation link is hovered or focused */
 nav a:hover,
 nav a:focus {
     background: var(--color-red);
@@ -140,7 +134,6 @@ nav a:focus {
 
 /* Main content styles */
 
-/* Selects the main content element */
 main {
     width: 100%;
     max-width: var(--container-width);
@@ -152,7 +145,6 @@ main {
 
 /* Main page title */
 
-/* Selects h1 elements that are direct children of main */
 main > h1 {
     margin-top: 0;
     margin-bottom: 25px;
@@ -170,7 +162,6 @@ main > h1 {
 
 /* Section styles */
 
-/* Selects section elements inside main */
 main section {
     background: var(--color-white);
     padding: 20px 22px;
@@ -186,7 +177,8 @@ main section {
 }
 
 
-/* Places two images side by side only in a section containing two images */
+/* Places two images side by side */
+
 main section:has(img:nth-of-type(2)) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -195,16 +187,18 @@ main section:has(img:nth-of-type(2)) {
 }
 
 
-/* Styles the images in the section containing two images */
+/* Image size */
+
 main section:has(img:nth-of-type(2)) img {
     display: block;
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
 }
 
 
 /* Makes the heading span both columns */
+
 main section:has(img:nth-of-type(2)) h2 {
     grid-column: 1 / 3;
     text-align: left;
@@ -212,12 +206,14 @@ main section:has(img:nth-of-type(2)) h2 {
 
 
 /* Makes the paragraph span both columns */
+
 main section:has(img:nth-of-type(2)) p {
     grid-column: 1 / 3;
 }
 
 
-/* Applies when the mouse is over a section */
+/* Section hover effect */
+
 main section:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -226,7 +222,6 @@ main section:hover {
 
 /* Section title styles */
 
-/* Selects h2 elements inside main */
 main h2 {
     margin-top: 0;
     margin-bottom: 15px;
@@ -241,7 +236,6 @@ main h2 {
 
 /* Subtitle styles */
 
-/* Selects h3 elements inside main */
 main h3 {
     margin-top: 0;
     margin-bottom: 5px;
@@ -255,7 +249,6 @@ main h3 {
 
 /* Article styles */
 
-/* Selects article elements inside main */
 main article {
     padding-bottom: 15px;
     margin-bottom: 15px;
@@ -263,7 +256,6 @@ main article {
 }
 
 
-/* Selects an article that is the last child of its parent */
 main article:last-child {
     border-bottom: none;
     margin-bottom: 0;
@@ -273,7 +265,6 @@ main article:last-child {
 
 /* Paragraph styles */
 
-/* Selects paragraphs inside main */
 main p {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -282,7 +273,6 @@ main p {
 
 /* Link styles */
 
-/* Selects links inside main */
 main a {
     color: var(--color-red-dark);
     font-weight: 600;
@@ -291,7 +281,6 @@ main a {
 }
 
 
-/* Applies when a main link is hovered or focused */
 main a:hover,
 main a:focus {
     color: var(--color-red);
@@ -300,14 +289,12 @@ main a:focus {
 
 /* List styles */
 
-/* Selects ordered and unordered lists inside main */
 main ul,
 main ol {
     padding-left: 25px;
 }
 
 
-/* Selects list items inside main */
 main li {
     margin-bottom: 8px;
 }
@@ -315,7 +302,6 @@ main li {
 
 /* Footer styles */
 
-/* Selects the footer */
 footer {
     background: var(--color-black);
     color: var(--color-white);
@@ -326,7 +312,6 @@ footer {
 }
 
 
-/* Selects paragraphs inside the footer */
 footer p {
     margin: 4px 0;
     font-size: 14px;
@@ -336,54 +321,62 @@ footer p {
 
 /* Mobile responsive styles */
 
-/* Applies these styles when the screen is 700px wide or smaller */
 @media (max-width: 700px) {
 
-    /* Adjusts the header on smaller screens */
+    /* Header */
+
     header {
         padding: 22px 15px;
     }
 
 
-    /* Adjusts the header title */
     header h1 {
         font-size: 25px;
     }
 
 
-    /* Adjusts the header paragraph */
     header p {
         font-size: 14px;
     }
 
 
-    /* Makes the navigation horizontally scrollable */
+    /* Mobile navigation */
+
     nav {
         padding: 8px 10px;
+
+        /* Allows horizontal swiping */
         overflow-x: auto;
         overflow-y: hidden;
+
+        /* Smooth scrolling on mobile */
         -webkit-overflow-scrolling: touch;
     }
 
 
     /* Keeps navigation buttons in one row */
+
     nav ul {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
         gap: 6px;
+
+        /* Allows the row to be wider than the screen */
         width: max-content;
     }
 
 
-    /* Keeps each navigation item at its natural width */
+    /* Prevents navigation items from shrinking */
+
     nav li {
         width: auto;
         flex-shrink: 0;
     }
 
 
-    /* Keeps navigation links in one line */
+    /* Keeps each button at its natural width */
+
     nav a {
         width: auto;
         white-space: nowrap;
@@ -393,60 +386,67 @@ footer p {
     }
 
 
-    /* Adjusts main content spacing */
+    /* Main content */
+
     main {
         margin: 25px auto;
         padding: 0 15px;
     }
 
 
-    /* Adjusts the main page title */
     main > h1 {
         font-size: 26px;
     }
 
 
-    /* Adjusts section spacing */
+    /* Sections */
+
     main section {
         padding: 17px;
         margin-bottom: 16px;
     }
 
 
-    /* Keeps two images side by side on smaller screens */
+    /* Two images on mobile */
+
     main section:has(img:nth-of-type(2)) {
         grid-template-columns: 1fr 1fr;
         gap: 5px;
     }
 
 
-    /* Makes images slightly larger on mobile */
+    /* Mobile image size */
+
     main section:has(img:nth-of-type(2)) img {
-        width: 110px;
-        height: 110px;
+        width: 130px;
+        height: 130px;
         max-width: 100%;
     }
 
 
-    /* Keeps the heading on the left */
+    /* Mobile section heading */
+
     main section:has(img:nth-of-type(2)) h2 {
         text-align: left;
     }
 
 
-    /* Adjusts section titles */
+    /* Section titles */
+
     main h2 {
         font-size: 21px;
     }
 
 
-    /* Adjusts subtitles */
+    /* Subtitles */
+
     main h3 {
         font-size: 17px;
     }
 
 
-    /* Adjusts the footer */
+    /* Footer */
+
     footer {
         padding: 17px 12px;
     }
