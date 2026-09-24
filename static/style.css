@@ -198,8 +198,8 @@ main section:has(img:nth-of-type(2)) {
 /* Styles the images in the section containing two images */
 main section:has(img:nth-of-type(2)) img {
     display: block; /* Makes the images block elements */
-    width: 100px; /* Makes the images smaller */
-    height: 100px; /* Makes the images smaller */
+    width: 150px; /* Makes the images smaller */
+    height: 150px; /* Makes the images smaller */
     margin: 0 auto; /* Centers each image in its column */
 }
 
@@ -414,8 +414,8 @@ footer p {
 
     /* Prevents images from overflowing on smaller screens */
     main section:has(img:nth-of-type(2)) img {
-        width: 80px; /* Makes images smaller on mobile */
-        height: 80px; /* Makes images smaller on mobile */
+        width: 130px; /* Makes images smaller on mobile */
+        height: 130px; /* Makes images smaller on mobile */
         max-width: 100%; /* Prevents images from overflowing */
     }
 
