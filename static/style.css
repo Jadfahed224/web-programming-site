@@ -266,7 +266,7 @@ main h3 {
     margin-bottom: 5px; /* Adds a little space below */
     font-family: var(--font-heading); /* Uses the heading font */
     font-size: 18px; /* Sets the subtitle size */
-    line-height: 1.3; /* Controls the subtitle line spacing */
+    line-height: 1.3; /* Controls the subtitle spacing */
     font-weight: 700; /* Makes the subtitle bold */
     color: var(--color-red-heading); /* Makes the subtitle red */
 }
@@ -382,28 +382,33 @@ footer p {
         position: sticky; /* Keeps navigation sticky on mobile */
         top: 0; /* Keeps navigation at the top */
         z-index: 1000; /* Keeps navigation above other content */
+        overflow-x: auto; /* Allows horizontal scrolling if needed */
     }
 
 
-    /* Changes navigation list layout */
+    /* Keeps navigation buttons in one horizontal row */
     nav ul {
-        flex-direction: column; /* Stacks navigation items vertically */
-        gap: 4px; /* Reduces the gap */
+        flex-direction: row; /* Keeps the buttons in a row */
+        justify-content: flex-start; /* Starts the row from the left */
+        flex-wrap: nowrap; /* Prevents the buttons from moving to another line */
+        gap: 4px; /* Keeps a small gap between buttons */
+        width: max-content; /* Allows the row to fit all buttons */
     }
 
 
-    /* Makes navigation list items full width */
+    /* Keeps each navigation item at its natural width */
     nav li {
-        width: 100%; /* Uses the full available width */
+        width: auto; /* Prevents each item from becoming full width */
+        flex: 0 0 auto; /* Prevents the item from shrinking */
     }
 
 
-    /* Makes navigation links full width */
+    /* Keeps navigation links at their natural width */
     nav a {
-        width: 100%; /* Makes each link stretch across its container */
-        text-align: center; /* Centers the link text */
-        padding: 7px 10px; /* Keeps buttons smaller */
-        font-size: 14px; /* Keeps the text smaller */
+        width: auto; /* Prevents links from becoming full width */
+        white-space: nowrap; /* Keeps each button's text on one line */
+        padding: 7px 10px; /* Keeps buttons small */
+        font-size: 14px; /* Keeps button text small */
     }
 
 
