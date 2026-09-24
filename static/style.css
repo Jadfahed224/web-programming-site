@@ -1,453 +1,467 @@
+/* :root stores reusable values (variables) for the whole stylesheet */
 :root {
-    --color-red: #e10600;
-    --color-red-dark: #b00000;
-    --color-red-heading: #c00000;
+    --color-red: #e10600; /* Main red color */
+    --color-red-dark: #b00000; /* Darker red color */
+    --color-red-heading: #c00000; /* Red used for headings */
 
-    --color-black: #111111;
-    --color-nav: #1c1c1c;
-    --color-white: #ffffff;
-    --color-background: #f7f7f7;
-    --color-text: #171717;
-    --color-light-gray: #dddddd;
-    --color-border: #e1e1e1;
-    --color-border-light: #eeeeee;
+    --color-black: #111111; /* Main black color */
+    --color-nav: #1c1c1c; /* Navigation background color */
+    --color-white: #ffffff; /* White color */
+    --color-background: #f7f7f7; /* Main page background */
+    --color-text: #171717; /* Main text color */
+    --color-light-gray: #dddddd; /* Light gray color */
+    --color-border: #e1e1e1; /* Normal border color */
+    --color-border-light: #eeeeee; /* Lighter border color */
 
-    --font-heading: Arial, Helvetica, sans-serif;
-    --font-body: Arial, Helvetica, sans-serif;
+    --font-heading: Arial, Helvetica, sans-serif; /* Font for headings */
+    --font-body: Arial, Helvetica, sans-serif; /* Font for normal text */
 
-    --space-xs: 4px;
-    --space-sm: 6px;
-    --space-md: 10px;
-    --space-lg: 20px;
-    --space-xl: 28px;
+    --space-xs: 4px; /* Extra small spacing */
+    --space-sm: 6px; /* Small spacing */
+    --space-md: 10px; /* Medium spacing */
+    --space-lg: 20px; /* Large spacing */
+    --space-xl: 28px; /* Extra large spacing */
 
-    --radius-sm: 7px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --radius-sm: 7px; /* Small rounded corners */
+    --radius-md: 8px; /* Medium rounded corners */
+    --radius-lg: 12px; /* Large rounded corners */
 
-    --container-width: 900px;
+    --container-width: 900px; /* Maximum content width */
 }
 
 
 /* General styles for the page */
 
+/* Selects every HTML element */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Includes padding and border inside the element's width */
 }
 
 
+/* Styles the HTML document */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Makes scrolling smooth */
 }
 
 
+/* Styles the entire page body */
 body {
-    margin: 0;
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--color-text);
-    background: var(--color-background);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    margin: 0; /* Removes the default outside margin */
+    font-family: var(--font-body); /* Uses the body font variable */
+    font-size: 16px; /* Sets the normal text size */
+    line-height: 1.6; /* Sets spacing between lines */
+    color: var(--color-text); /* Sets the text color */
+    background: var(--color-background); /* Sets the page background */
+    min-height: 100vh; /* Makes the body at least the full screen height */
+    display: flex; /* Enables Flexbox layout */
+    flex-direction: column; /* Arranges direct children vertically */
+    overflow-x: hidden; /* Hides horizontal overflow */
 }
 
 
 /* Header styles */
 
+/* Selects the header element */
 header {
-    background: var(--color-black);
-    color: var(--color-white);
-    padding: 28px 20px;
-    text-align: center;
-    border-bottom: 4px solid var(--color-red);
+    background: var(--color-black); /* Sets the header background to black */
+    color: var(--color-white); /* Makes header text white */
+    padding: 28px 20px; /* Adds inner space */
+    text-align: center; /* Centers the text */
+    border-bottom: 4px solid var(--color-red); /* Adds a red bottom border */
 }
 
 
+/* Selects h1 elements inside the header */
 header h1 {
-    margin: 0;
-    font-family: var(--font-heading);
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 1.25;
+    margin: 0; /* Removes the default margin */
+    font-family: var(--font-heading); /* Uses the heading font */
+    font-size: 32px; /* Sets the heading size */
+    font-weight: 900; /* Makes the heading very bold */
+    line-height: 1.25; /* Controls the heading's line spacing */
 }
 
 
+/* Selects paragraphs inside the header */
 header p {
-    margin: 6px 0 0;
-    font-size: 15px;
-    color: var(--color-light-gray);
+    margin: 6px 0 0; /* Adds 6px top margin */
+    font-size: 15px; /* Sets paragraph text size */
+    color: var(--color-light-gray); /* Makes the text light gray */
 }
 
 
 /* Navigation styles */
 
+/* Selects the navigation bar */
 nav {
-    background: var(--color-nav);
-    padding: 10px 15px;
-
-    /* Keeps navigation visible while scrolling */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: var(--color-nav); /* Sets the navigation background */
+    padding: 10px 15px; /* Adds inner space around the navigation */
+    position: sticky; /* Keeps the navigation visible while scrolling */
+    top: 0; /* Sticks the navigation to the top */
+    z-index: 1000; /* Keeps the navigation above other content */
 }
 
 
+/* Selects unordered lists inside navigation */
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    list-style: none; /* Removes the list bullets */
+    margin: 0; /* Removes outside margin */
+    padding: 0; /* Removes inside padding */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
+    display: flex; /* Arranges list items using Flexbox */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Aligns items vertically */
+    flex-wrap: wrap; /* Allows items to move to another line */
+    gap: 6px; /* Adds space between items */
 }
 
 
+/* Selects links inside navigation */
 nav a {
-    display: block;
-    padding: 7px 10px;
-    font-size: 14px;
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: var(--radius-sm);
+    display: block; /* Makes the link behave like a block */
+    padding: 7px 10px; /* Makes the buttons smaller */
+    font-size: 14px; /* Makes the button text smaller */
+    color: var(--color-white); /* Makes link text white */
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold; /* Makes link text bold */
+    border-radius: var(--radius-sm); /* Rounds the link corners */
 
     transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+        background-color 0.2s ease, /* Smooth background color change */
+        color 0.2s ease, /* Smooth text color change */
+        transform 0.2s ease; /* Smooth movement */
 }
 
 
+/* Applies when a navigation link is hovered or focused */
 nav a:hover,
 nav a:focus {
-    background: var(--color-red);
-    color: var(--color-white);
-    transform: translateY(-2px);
+    background: var(--color-red); /* Changes the background to red */
+    color: var(--color-white); /* Keeps the text white */
+    transform: translateY(-2px); /* Moves the link up 2px */
 }
 
 
 /* Main content styles */
 
+/* Selects the main content element */
 main {
-    width: 100%;
-    max-width: var(--container-width);
-    margin: 35px auto;
-    padding: 0 20px;
-    flex: 1;
+    width: 100%; /* Allows main to use the available width */
+    max-width: var(--container-width); /* Limits the width to 900px */
+    margin: 35px auto; /* Adds top/bottom margin and centers the main content */
+    padding: 0 20px; /* Adds left/right inner space */
+    flex: 1; /* Lets main take available space */
 }
 
 
 /* Main page title */
 
+/* Selects h1 elements that are direct children of main */
 main > h1 {
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-family: var(--font-heading);
-    font-size: 30px;
-    line-height: 1.25;
-    font-weight: 800;
-    color: var(--color-text);
+    margin-top: 0; /* Removes the default top margin */
+    margin-bottom: 25px; /* Adds space below the title */
+    font-family: var(--font-heading); /* Uses the heading font */
+    font-size: 30px; /* Sets the title size */
+    line-height: 1.25; /* Controls line spacing */
+    font-weight: 800; /* Makes the title very bold */
+    color: var(--color-text); /* Sets the title color */
 
-    padding-bottom: var(--space-sm);
-    border-bottom: 3px solid var(--color-red);
-    text-align: center;
+    padding-bottom: var(--space-sm); /* Adds space below the title */
+    border-bottom: 3px solid var(--color-red); /* Adds a red line below the title */
+    text-align: center; /* Centers the page title */
 }
 
 
 /* Section styles */
 
+/* Selects section elements inside main */
 main section {
-    background: var(--color-white);
-    padding: 20px 22px;
-    margin-bottom: 20px;
+    background: var(--color-white); /* Makes the section background white */
+    padding: 20px 22px; /* Adds inner space */
+    margin-bottom: 20px; /* Adds space below each section */
 
-    border: 1px solid var(--color-border);
-    border-left: 5px solid var(--color-red);
-    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border); /* Adds a thin border */
+    border-left: 5px solid var(--color-red); /* Adds a thicker red left border */
+    border-radius: var(--radius-md); /* Rounds the section corners */
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.2s ease, /* Smooth movement */
+        box-shadow 0.2s ease; /* Smooth shadow change */
 }
 
 
-/* Places two images side by side */
-
+/* Places two images side by side only in a section containing two images */
 main section:has(img:nth-of-type(2)) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 10px;
+    display: grid; /* Uses CSS Grid */
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    align-items: center; /* Centers items vertically */
+    gap: 10px; /* Adds space between items */
 }
 
 
-/* Image size */
-
+/* Styles the two images */
 main section:has(img:nth-of-type(2)) img {
-    display: block;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
+    display: block; /* Makes the images block elements */
+    width: 150px; /* Sets the image width */
+    height: 150px; /* Sets the image height */
+    margin: 0 auto; /* Centers each image in its column */
 }
 
 
 /* Makes the heading span both columns */
-
 main section:has(img:nth-of-type(2)) h2 {
-    grid-column: 1 / 3;
-    text-align: left;
+    grid-column: 1 / 3; /* Makes the heading span both columns */
+    text-align: left; /* Keeps the heading on the left */
 }
 
 
 /* Makes the paragraph span both columns */
-
 main section:has(img:nth-of-type(2)) p {
-    grid-column: 1 / 3;
+    grid-column: 1 / 3; /* Makes the paragraph span both columns */
 }
 
 
-/* Section hover effect */
-
+/* Applies when the mouse is over a section */
 main section:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px); /* Moves the section up 2px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adds a soft shadow */
+}
+
+
+/* Plain section */
+
+/* Removes all custom CSS from this section and its contents */
+main section.plain-section,
+main section.plain-section * {
+    all: revert; /* Restores normal browser HTML styling */
+}
+
+
+/* Prevents the plain section from receiving the normal section hover effect */
+main section.plain-section:hover {
+    transform: none; /* Prevents movement */
+    box-shadow: none; /* Removes the shadow */
 }
 
 
 /* Section title styles */
 
+/* Selects h2 elements inside main */
 main h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-family: var(--font-heading);
-    font-size: 23px;
-    line-height: 1.3;
-    font-weight: 800;
-    color: var(--color-text);
-    text-align: left;
+    margin-top: 0; /* Removes the heading's default top margin */
+    margin-bottom: 15px; /* Adds space below the heading */
+    font-family: var(--font-heading); /* Uses the heading font */
+    font-size: 23px; /* Sets the heading size */
+    line-height: 1.3; /* Controls the heading line spacing */
+    font-weight: 800; /* Makes the heading very bold */
+    color: var(--color-text); /* Sets the heading color */
+    text-align: left; /* Keeps section headings on the left */
 }
 
 
 /* Subtitle styles */
 
+/* Selects h3 elements inside main */
 main h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-family: var(--font-heading);
-    font-size: 18px;
-    line-height: 1.3;
-    font-weight: 700;
-    color: var(--color-red-heading);
+    margin-top: 0; /* Removes the default top margin */
+    margin-bottom: 5px; /* Adds a little space below */
+    font-family: var(--font-heading); /* Uses the heading font */
+    font-size: 18px; /* Sets the subtitle size */
+    line-height: 1.3; /* Controls the subtitle line spacing */
+    font-weight: 700; /* Makes the subtitle bold */
+    color: var(--color-red-heading); /* Makes the subtitle red */
 }
 
 
 /* Article styles */
 
+/* Selects article elements inside main */
 main article {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--color-border-light);
+    padding-bottom: 15px; /* Adds space below the article */
+    margin-bottom: 15px; /* Adds space between articles */
+    border-bottom: 1px solid var(--color-border-light); /* Adds a bottom line */
 }
 
 
+/* Selects the last article */
 main article:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    border-bottom: none; /* Removes the bottom border */
+    margin-bottom: 0; /* Removes bottom margin */
+    padding-bottom: 0; /* Removes bottom padding */
 }
 
 
 /* Paragraph styles */
 
+/* Selects paragraphs inside main */
 main p {
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: 5px; /* Adds a small top margin */
+    margin-bottom: 10px; /* Adds space below paragraphs */
 }
 
 
 /* Link styles */
 
+/* Selects links inside main */
 main a {
-    color: var(--color-red-dark);
-    font-weight: 600;
+    color: var(--color-red-dark); /* Makes links dark red */
+    font-weight: 600; /* Makes links semi-bold */
 
-    transition: color 0.2s ease;
+    transition: color 0.2s ease; /* Smoothly changes link color */
 }
 
 
+/* Applies when a main link is hovered or focused */
 main a:hover,
 main a:focus {
-    color: var(--color-red);
+    color: var(--color-red); /* Changes the link to bright red */
 }
 
 
 /* List styles */
 
+/* Selects ordered and unordered lists inside main */
 main ul,
 main ol {
-    padding-left: 25px;
+    padding-left: 25px; /* Indents the lists */
 }
 
 
+/* Selects list items inside main */
 main li {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Adds space below list items */
 }
 
 
 /* Footer styles */
 
+/* Selects the footer */
 footer {
-    background: var(--color-black);
-    color: var(--color-white);
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    border-top: 4px solid var(--color-red);
+    background: var(--color-black); /* Makes the footer black */
+    color: var(--color-white); /* Makes footer text white */
+    text-align: center; /* Centers footer text */
+    padding: 20px; /* Adds inner space */
+    margin-top: 20px; /* Adds space above the footer */
+    border-top: 4px solid var(--color-red); /* Adds a red top border */
 }
 
 
+/* Selects paragraphs inside the footer */
 footer p {
-    margin: 4px 0;
-    font-size: 14px;
-    color: var(--color-light-gray);
+    margin: 4px 0; /* Adds 4px top/bottom margin */
+    font-size: 14px; /* Makes footer text smaller */
+    color: var(--color-light-gray); /* Makes footer text light gray */
 }
 
 
 /* Mobile responsive styles */
 
+/* Applies these styles when the screen is 700px wide or smaller */
 @media (max-width: 700px) {
 
-    /* Header */
-
+    /* Adjusts the header on smaller screens */
     header {
-        padding: 22px 15px;
+        padding: 22px 15px; /* Reduces header spacing */
     }
 
 
+    /* Adjusts the header title */
     header h1 {
-        font-size: 25px;
+        font-size: 25px; /* Makes the title smaller */
     }
 
 
+    /* Adjusts the header paragraph */
     header p {
-        font-size: 14px;
+        font-size: 14px; /* Makes the paragraph smaller */
     }
 
 
-    /* Mobile navigation */
-
+    /* Adjusts navigation padding */
     nav {
-        padding: 8px 10px;
-
-        /* Allows horizontal swiping */
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        /* Smooth scrolling on mobile */
-        -webkit-overflow-scrolling: touch;
+        padding: 8px 10px; /* Reduces navigation padding */
+        position: sticky; /* Keeps navigation sticky on mobile */
+        top: 0; /* Keeps navigation at the top */
+        z-index: 1000; /* Keeps navigation above other content */
     }
 
 
-    /* Keeps navigation buttons in one row */
-
+    /* Changes navigation list layout */
     nav ul {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        gap: 6px;
-
-        /* Allows the row to be wider than the screen */
-        width: max-content;
+        flex-direction: column; /* Stacks navigation items vertically */
+        gap: 4px; /* Reduces the gap */
     }
 
 
-    /* Prevents navigation items from shrinking */
-
+    /* Makes navigation list items full width */
     nav li {
-        width: auto;
-        flex-shrink: 0;
+        width: 100%; /* Uses the full available width */
     }
 
 
-    /* Keeps each button at its natural width */
-
+    /* Makes navigation links full width */
     nav a {
-        width: auto;
-        white-space: nowrap;
-        text-align: center;
-        padding: 7px 10px;
-        font-size: 14px;
+        width: 100%; /* Makes each link stretch across its container */
+        text-align: center; /* Centers the link text */
+        padding: 7px 10px; /* Keeps buttons smaller */
+        font-size: 14px; /* Keeps the text smaller */
     }
 
 
-    /* Main content */
-
+    /* Adjusts main content spacing */
     main {
-        margin: 25px auto;
-        padding: 0 15px;
+        margin: 25px auto; /* Reduces top/bottom margin */
+        padding: 0 15px; /* Reduces left/right padding */
     }
 
 
+    /* Adjusts the main page title */
     main > h1 {
-        font-size: 26px;
+        font-size: 26px; /* Makes the title smaller */
     }
 
 
-    /* Sections */
-
+    /* Adjusts section spacing */
     main section {
-        padding: 17px;
-        margin-bottom: 16px;
+        padding: 17px; /* Reduces section padding */
+        margin-bottom: 16px; /* Reduces space between sections */
     }
 
 
-    /* Two images on mobile */
-
+    /* Keeps the two images side by side on mobile */
     main section:has(img:nth-of-type(2)) {
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
+        grid-template-columns: 1fr 1fr; /* Keeps two equal columns */
+        gap: 5px; /* Reduces the gap */
     }
 
 
-    /* Mobile image size */
-
+    /* Makes the two images 130px on mobile */
     main section:has(img:nth-of-type(2)) img {
-        width: 130px;
-        height: 130px;
-        max-width: 100%;
+        width: 130px; /* Sets the mobile image width */
+        height: 130px; /* Sets the mobile image height */
+        max-width: 100%; /* Prevents overflow */
     }
 
 
-    /* Mobile section heading */
-
+    /* Keeps the heading on the left */
     main section:has(img:nth-of-type(2)) h2 {
-        text-align: left;
+        text-align: left; /* Keeps the heading left-aligned */
     }
 
 
-    /* Section titles */
-
+    /* Adjusts section titles */
     main h2 {
-        font-size: 21px;
+        font-size: 21px; /* Makes h2 smaller */
     }
 
 
-    /* Subtitles */
-
+    /* Adjusts subtitles */
     main h3 {
-        font-size: 17px;
+        font-size: 17px; /* Makes h3 smaller */
     }
 
 
-    /* Footer */
-
+    /* Adjusts the footer */
     footer {
-        padding: 17px 12px;
+        padding: 17px 12px; /* Reduces footer padding */
     }
 }
