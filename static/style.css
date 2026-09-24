@@ -95,9 +95,9 @@ header p {
 nav {
     background: var(--color-nav); /* Sets the navigation background */
     padding: 10px 15px; /* Adds inner space around the navigation */
-    position: sticky; /* Keeps the navigation visible while scrolling */
-    top: 0; /* Sticks the navigation to the top */
-    z-index: 1000; /* Keeps the navigation above other content */
+    position: sticky; /* Keeps navigation visible while scrolling */
+    top: 0; /* Sticks navigation to the top */
+    z-index: 1000; /* Keeps navigation above other content */
 }
 
 
@@ -224,22 +224,6 @@ main section:has(img:nth-of-type(2)) p {
 main section:hover {
     transform: translateY(-2px); /* Moves the section up 2px */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adds a soft shadow */
-}
-
-
-/* Plain section */
-
-/* Removes all custom CSS from this section and its contents */
-main section.plain-section,
-main section.plain-section * {
-    all: revert; /* Restores normal browser HTML styling */
-}
-
-
-/* Prevents the plain section from receiving the normal section hover effect */
-main section.plain-section:hover {
-    transform: none; /* Prevents movement */
-    box-shadow: none; /* Removes the shadow */
 }
 
 
@@ -382,7 +366,7 @@ footer p {
         position: sticky; /* Keeps navigation sticky on mobile */
         top: 0; /* Keeps navigation at the top */
         z-index: 1000; /* Keeps navigation above other content */
-        overflow-x: auto; /* Allows horizontal scrolling if needed */
+        overflow-x: auto; /* Allows horizontal scrolling */
     }
 
 
@@ -398,15 +382,15 @@ footer p {
 
     /* Keeps each navigation item at its natural width */
     nav li {
-        width: auto; /* Prevents each item from becoming full width */
-        flex: 0 0 auto; /* Prevents the item from shrinking */
+        width: auto; /* Prevents items from becoming full width */
+        flex: 0 0 auto; /* Prevents items from shrinking */
     }
 
 
     /* Keeps navigation links at their natural width */
     nav a {
         width: auto; /* Prevents links from becoming full width */
-        white-space: nowrap; /* Keeps each button's text on one line */
+        white-space: nowrap; /* Keeps button text on one line */
         padding: 7px 10px; /* Keeps buttons small */
         font-size: 14px; /* Keeps button text small */
     }
