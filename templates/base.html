@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Web Programming Portfolio{% endblock %}</title>
-    <link rel="stylesheet" 
-        href="{{ url_for('static', filename='style.css') }}"/>
+
+    {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+    {% endblock %}
+
 {% block head %}{% endblock %}
 </head>
 <body>
@@ -21,6 +24,7 @@
             <li><a href="/web-history">History of the Web</a></li>
             <li><a href="/internet-history-ai">History of the Internet (AI)</a></li>
             <li><a href="/web-history-ai">History of the Web (AI)</a></li>
+            <li><a href="/submit-profile">Engineering Student Profile</a></li>
         </ul>
     </nav>
 

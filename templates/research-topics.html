@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block css}{% endblock %}
+
+{% block title %}Web Programming Research{% endblock %}
+
+{% block content %}
+<h1>Research Topics</h1>
+        <p>This page contains a collection of research topics related to web programming. Each topic covers a different concept and provides useful information about its role in web development.</p>
+        <p>As you can see there is no CSS but it still inherits the "base.html" file to keep the same structure as the other pages.</p>
+<main>
+
+    <section>
+        <h2>1. CSS At-Rules</h2>
+        <p>CSS at-rules are special CSS instructions that begin with the <code>@</code> symbol. They control specific behaviors such as responsive design, animations, fonts, and stylesheet organization.</p>
+
+        <h3>Main At-Rules</h3>
+        <ul>
+            <li><article><strong><code>@charset</code>:</strong> Defines the character encoding of a stylesheet.</article></li>
+            <li><article><strong><code>@color-profile</code>:</strong> Defines a color profile for advanced color management.</article></li>
+            <li><article><strong><code>@container</code>:</strong> Applies styles based on the size or conditions of a container.</article></li>
+            <li><article><strong><code>@counter-style</code>:</strong> Creates custom list numbering and bullet styles.</article></li>
+            <li><article><strong><code>@custom-media</code>:</strong> Defines reusable media query conditions.</article></li>
+            <li><article><strong><code>@document</code>:</strong> Applies styles based on document URLs; it is deprecated and non-standard.</article></li>
+            <li><article><strong><code>@font-face</code>:</strong> Loads and defines custom fonts.</article></li>
+            <li><article><strong><code>@font-feature-values</code>:</strong> Defines names for special font features.</article></li>
+            <li><article><strong><code>@font-palette-values</code>:</strong> Defines color palettes for color fonts.</article></li>
+            <li><article><strong><code>@function</code>:</strong> Defines reusable custom CSS functions.</article></li>
+            <li><article><strong><code>@import</code>:</strong> Imports another CSS stylesheet.</article></li>
+            <li><article><strong><code>@keyframes</code>:</strong> Defines the stages of CSS animations.</article></li>
+            <li><article><strong><code>@layer</code>:</strong> Organizes CSS into cascade layers.</article></li>
+            <li><article><strong><code>@media</code>:</strong> Applies styles when specific conditions, such as screen size, are met.</article></li>
+            <li><article><strong><code>@namespace</code>:</strong> Defines XML namespaces for CSS selectors.</article></li>
+            <li><article><strong><code>@page</code>:</strong> Controls the layout of printed pages.</article></li>
+            <li><article><strong><code>@position-try</code>:</strong> Defines fallback positions for positioned elements.</article></li>
+            <li><article><strong><code>@property</code>:</strong> Defines the behavior and syntax of a CSS custom property.</article></li>
+            <li><article><strong><code>@scope</code>:</strong> Limits styles to a specific part of a document.</article></li>
+            <li><article><strong><code>@starting-style</code>:</strong> Defines starting styles for elements entering the page.</article></li>
+            <li><article><strong><code>@supports</code>:</strong> Applies styles when a browser supports a specific CSS feature.</article></li>
+            <li><article><strong><code>@view-transition</code>:</strong> Controls transitions between webpage views.</article></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. &lt;button&gt; vs &lt;input type="button"&gt;</h2>
+        <p>Both elements can create a clickable button, but they are not identical.</p>
+
+        <article>
+            <h3>&lt;button&gt;</h3>
+            <p>The <code>&lt;button&gt;</code> element is a dedicated HTML button element. It can contain text and other HTML content such as images or icons. Its type can be <code>submit</code>, <code>reset</code>, or <code>button</code>.</p>
+
+            <pre><code>&lt;button type="button"&gt;Click Me&lt;/button&gt;</code></pre>
+        </article>
+
+        <article>
+            <h3>&lt;input type="button"&gt;</h3>
+            <p>The <code>&lt;input type="button"&gt;</code> element creates a button with no default action. Its label is provided through the <code>value</code> attribute.</p>
+
+            <pre><code>&lt;input type="button" value="Click Me"&gt;</code></pre>
+        </article>
+
+        <article>
+            <h3>Main Difference</h3>
+            <p>The <code>&lt;button&gt;</code> element is more flexible because it can contain HTML content. The <code>&lt;input type="button"&gt;</code> element is simpler and uses the <code>value</code> attribute as its label.</p>
+        </article>
+    </section>
+
+    <section>
+        <h2>3. Regular Expressions</h2>
+        <p>A regular expression, or regex, is a pattern used to find, match, or validate specific combinations of characters in text.</p>
+
+        <article>
+            <h3>Common Uses</h3>
+            <ul>
+                <li>Validate input such as email addresses or phone numbers.</li>
+                <li>Search for specific text patterns.</li>
+                <li>Extract parts of a string.</li>
+                <li>Replace matching text.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>Basic Example</h3>
+            <pre><code>const pattern = /^\d+$/;</code></pre>
+            <p>This pattern matches a string containing only digits.</p>
+        </article>
+
+        <article>
+            <h3>Common Symbols</h3>
+            <ul>
+                <li><strong><code>.</code>:</strong> Matches a character.</li>
+                <li><strong><code>\d</code>:</strong> Matches a digit.</li>
+                <li><strong><code>\w</code>:</strong> Matches a word character.</li>
+                <li><strong><code>+</code>:</strong> Matches one or more occurrences.</li>
+                <li><strong><code>*</code>:</strong> Matches zero or more occurrences.</li>
+                <li><strong><code>^</code>:</strong> Matches the beginning of a string.</li>
+                <li><strong><code>$</code>:</strong> Matches the end of a string.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>JavaScript Example</h3>
+            <pre><code>const pattern = /hello/i;</code></pre>
+            <p>The <code>i</code> flag makes the pattern case-insensitive. JavaScript provides methods such as <code>test()</code>, <code>exec()</code>, <code>match()</code>, <code>search()</code>, and <code>replace()</code> for working with regular expressions.</p>
+        </article>
+    </section>
+
+    <section>
+        <h2>Reliable Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules">CSS At-Rules</a> - MDN Web Docs</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button">HTML &lt;button&gt; Element</a> - MDN Web Docs</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/button">HTML &lt;input type="button"&gt;</a> - MDN Web Docs</li>
+            <li><a href="https://html.spec.whatwg.org/multipage/form-elements.html">HTML Living Standard</a> - WHATWG</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions">Regular Expressions</a> - MDN Web Docs</li>
+            <li><a href="https://tc39.es/ecma262/">ECMAScript Language Specification</a> - TC39</li>
+        </ul>
+    </section>
+
+</main>
+{% endblock %}
