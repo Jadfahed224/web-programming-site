@@ -53,9 +53,9 @@ body {
     color: var(--color-text); /* Sets the text color */
     background: var(--color-background); /* Sets the page background */
     min-height: 100vh; /* Makes the body at least the full screen height */
-    display: flex; /* Enables Flexbox layout */
+    display: flex; /* Enables Flexbox */
     flex-direction: column; /* Arranges direct children vertically */
-    overflow-x: hidden; /* Hides horizontal overflow */
+    overflow-x: hidden; /* Prevents horizontal page overflow */
 }
 
 
@@ -63,7 +63,7 @@ body {
 
 /* Selects the header element */
 header {
-    background: var(--color-black); /* Sets the header background to black */
+    background: var(--color-black); /* Sets the header background */
     color: var(--color-white); /* Makes header text white */
     padding: 28px 20px; /* Adds inner space */
     text-align: center; /* Centers the text */
@@ -77,13 +77,13 @@ header h1 {
     font-family: var(--font-heading); /* Uses the heading font */
     font-size: 32px; /* Sets the heading size */
     font-weight: 900; /* Makes the heading very bold */
-    line-height: 1.25; /* Controls the heading's line spacing */
+    line-height: 1.25; /* Controls the heading line spacing */
 }
 
 
 /* Selects paragraphs inside the header */
 header p {
-    margin: 6px 0 0; /* Adds 6px top margin */
+    margin: 6px 0 0; /* Adds top space */
     font-size: 15px; /* Sets paragraph text size */
     color: var(--color-light-gray); /* Makes the text light gray */
 }
@@ -94,7 +94,7 @@ header p {
 /* Selects the navigation bar */
 nav {
     background: var(--color-nav); /* Sets the navigation background */
-    padding: 10px 15px; /* Adds inner space around the navigation */
+    padding: 10px 15px; /* Adds inner space */
     position: sticky; /* Keeps navigation visible while scrolling */
     top: 0; /* Sticks navigation to the top */
     z-index: 1000; /* Keeps navigation above other content */
@@ -103,15 +103,15 @@ nav {
 
 /* Selects unordered lists inside navigation */
 nav ul {
-    list-style: none; /* Removes the list bullets */
-    margin: 0; /* Removes outside margin */
-    padding: 0; /* Removes inside padding */
+    list-style: none; /* Removes list bullets */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
 
-    display: flex; /* Arranges list items using Flexbox */
-    justify-content: center; /* Centers items horizontally */
+    display: flex; /* Uses Flexbox */
+    justify-content: center; /* Centers navigation items */
     align-items: center; /* Aligns items vertically */
-    flex-wrap: wrap; /* Allows items to move to another line */
-    gap: 6px; /* Adds space between items */
+    flex-wrap: wrap; /* Allows wrapping on desktop */
+    gap: 6px; /* Adds space between buttons */
 }
 
 
@@ -119,14 +119,14 @@ nav ul {
 nav a {
     display: block; /* Makes the link behave like a block */
     padding: 7px 10px; /* Makes the buttons smaller */
-    font-size: 14px; /* Makes the button text smaller */
-    color: var(--color-white); /* Makes link text white */
+    font-size: 14px; /* Makes button text smaller */
+    color: var(--color-white); /* Makes the text white */
     text-decoration: none; /* Removes the underline */
-    font-weight: bold; /* Makes link text bold */
-    border-radius: var(--radius-sm); /* Rounds the link corners */
+    font-weight: bold; /* Makes the text bold */
+    border-radius: var(--radius-sm); /* Rounds button corners */
 
     transition:
-        background-color 0.2s ease, /* Smooth background color change */
+        background-color 0.2s ease, /* Smooth background change */
         color 0.2s ease, /* Smooth text color change */
         transform 0.2s ease; /* Smooth movement */
 }
@@ -137,7 +137,7 @@ nav a:hover,
 nav a:focus {
     background: var(--color-red); /* Changes the background to red */
     color: var(--color-white); /* Keeps the text white */
-    transform: translateY(-2px); /* Moves the link up 2px */
+    transform: translateY(-2px); /* Moves the button up slightly */
 }
 
 
@@ -145,11 +145,21 @@ nav a:focus {
 
 /* Selects the main content element */
 main {
-    width: 100%; /* Allows main to use the available width */
+    width: 100%; /* Allows main to use available width */
     max-width: var(--container-width); /* Limits the width to 900px */
-    margin: 35px auto; /* Adds top/bottom margin and centers the main content */
-    padding: 0 20px; /* Adds left/right inner space */
+    margin: 35px auto; /* Centers the main content */
+    padding: 0 20px; /* Adds left and right space */
     flex: 1; /* Lets main take available space */
+
+    min-width: 0; /* Allows content to shrink inside its container */
+    overflow-wrap: anywhere; /* Breaks long words when necessary */
+}
+
+
+/* Makes all content inside main stay inside its layout */
+main * {
+    max-width: 100%; /* Prevents elements from exceeding the main width */
+    overflow-wrap: anywhere; /* Allows long text to wrap */
 }
 
 
@@ -166,7 +176,7 @@ main > h1 {
     color: var(--color-text); /* Sets the title color */
 
     padding-bottom: var(--space-sm); /* Adds space below the title */
-    border-bottom: 3px solid var(--color-red); /* Adds a red line below the title */
+    border-bottom: 3px solid var(--color-red); /* Adds a red line */
     text-align: center; /* Centers the page title */
 }
 
@@ -175,7 +185,7 @@ main > h1 {
 
 /* Selects section elements inside main */
 main section {
-    background: var(--color-white); /* Makes the section background white */
+    background: var(--color-white); /* Makes the section white */
     padding: 20px 22px; /* Adds inner space */
     margin-bottom: 20px; /* Adds space below each section */
 
@@ -183,9 +193,11 @@ main section {
     border-left: 5px solid var(--color-red); /* Adds a thicker red left border */
     border-radius: var(--radius-md); /* Rounds the section corners */
 
+    min-width: 0; /* Allows the section to shrink correctly */
+
     transition:
         transform 0.2s ease, /* Smooth movement */
-        box-shadow 0.2s ease; /* Smooth shadow change */
+        box-shadow 0.2s ease; /* Smooth shadow */
 }
 
 
@@ -201,28 +213,50 @@ main section:has(img:nth-of-type(2)) {
 /* Styles the two images */
 main section:has(img:nth-of-type(2)) img {
     display: block; /* Makes the images block elements */
-    width: 150px; /* Sets the image width */
-    height: 150px; /* Sets the image height */
-    margin: 0 auto; /* Centers each image in its column */
+    width: 150px; /* Sets desktop image width */
+    height: 150px; /* Sets desktop image height */
+    margin: 0 auto; /* Centers each image */
 }
 
 
-/* Makes the heading span both columns */
+/* Makes the heading span both image columns */
 main section:has(img:nth-of-type(2)) h2 {
-    grid-column: 1 / 3; /* Makes the heading span both columns */
+    grid-column: 1 / 3; /* Spans both columns */
     text-align: left; /* Keeps the heading on the left */
 }
 
 
 /* Makes the paragraph span both columns */
 main section:has(img:nth-of-type(2)) p {
-    grid-column: 1 / 3; /* Makes the paragraph span both columns */
+    grid-column: 1 / 3; /* Spans both columns */
+}
+
+
+/* Keeps preformatted code inside the section */
+main pre {
+    max-width: 100%; /* Prevents code from exceeding the section */
+    overflow-x: auto; /* Allows scrolling if necessary */
+    white-space: pre-wrap; /* Allows long code to wrap */
+    overflow-wrap: anywhere; /* Breaks very long code when needed */
+}
+
+
+/* Keeps inline code inside the section */
+main code {
+    overflow-wrap: anywhere; /* Breaks long code text */
+    word-break: break-word; /* Allows long words to wrap */
+}
+
+
+/* Keeps long links inside the layout */
+main a {
+    overflow-wrap: anywhere; /* Breaks long URLs if necessary */
 }
 
 
 /* Applies when the mouse is over a section */
 main section:hover {
-    transform: translateY(-2px); /* Moves the section up 2px */
+    transform: translateY(-2px); /* Moves the section up slightly */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adds a soft shadow */
 }
 
@@ -231,11 +265,11 @@ main section:hover {
 
 /* Selects h2 elements inside main */
 main h2 {
-    margin-top: 0; /* Removes the heading's default top margin */
+    margin-top: 0; /* Removes the default top margin */
     margin-bottom: 15px; /* Adds space below the heading */
     font-family: var(--font-heading); /* Uses the heading font */
     font-size: 23px; /* Sets the heading size */
-    line-height: 1.3; /* Controls the heading line spacing */
+    line-height: 1.3; /* Controls heading line spacing */
     font-weight: 800; /* Makes the heading very bold */
     color: var(--color-text); /* Sets the heading color */
     text-align: left; /* Keeps section headings on the left */
@@ -247,10 +281,10 @@ main h2 {
 /* Selects h3 elements inside main */
 main h3 {
     margin-top: 0; /* Removes the default top margin */
-    margin-bottom: 5px; /* Adds a little space below */
+    margin-bottom: 5px; /* Adds space below the subtitle */
     font-family: var(--font-heading); /* Uses the heading font */
     font-size: 18px; /* Sets the subtitle size */
-    line-height: 1.3; /* Controls the subtitle spacing */
+    line-height: 1.3; /* Controls subtitle spacing */
     font-weight: 700; /* Makes the subtitle bold */
     color: var(--color-red-heading); /* Makes the subtitle red */
 }
@@ -363,7 +397,7 @@ footer p {
     /* Adjusts navigation padding */
     nav {
         padding: 8px 10px; /* Reduces navigation padding */
-        position: sticky; /* Keeps navigation sticky on mobile */
+        position: sticky; /* Keeps navigation sticky */
         top: 0; /* Keeps navigation at the top */
         z-index: 1000; /* Keeps navigation above other content */
         overflow-x: auto; /* Allows horizontal scrolling */
@@ -374,38 +408,40 @@ footer p {
     nav ul {
         flex-direction: row; /* Keeps the buttons in a row */
         justify-content: flex-start; /* Starts the row from the left */
-        flex-wrap: nowrap; /* Prevents the buttons from moving to another line */
-        gap: 4px; /* Keeps a small gap between buttons */
-        width: max-content; /* Allows the row to fit all buttons */
+        flex-wrap: nowrap; /* Prevents buttons from wrapping */
+        gap: 4px; /* Adds a small gap */
+        width: max-content; /* Allows all buttons to fit in one row */
     }
 
 
-    /* Keeps each navigation item at its natural width */
+    /* Keeps navigation items at their natural width */
     nav li {
-        width: auto; /* Prevents items from becoming full width */
-        flex: 0 0 auto; /* Prevents items from shrinking */
+        width: auto; /* Prevents full width */
+        flex: 0 0 auto; /* Prevents shrinking */
     }
 
 
     /* Keeps navigation links at their natural width */
     nav a {
-        width: auto; /* Prevents links from becoming full width */
-        white-space: nowrap; /* Keeps button text on one line */
+        width: auto; /* Prevents full width */
+        white-space: nowrap; /* Keeps text on one line */
         padding: 7px 10px; /* Keeps buttons small */
-        font-size: 14px; /* Keeps button text small */
+        font-size: 14px; /* Keeps text small */
     }
 
 
     /* Adjusts main content spacing */
     main {
-        margin: 25px auto; /* Reduces top/bottom margin */
-        padding: 0 15px; /* Reduces left/right padding */
+        margin: 25px auto; /* Reduces main margin */
+        padding: 0 15px; /* Reduces side padding */
+        width: 100%; /* Uses the full mobile width */
+        min-width: 0; /* Allows content to shrink */
     }
 
 
     /* Adjusts the main page title */
     main > h1 {
-        font-size: 26px; /* Makes the title smaller */
+        font-size: 26px; /* Makes the page title smaller */
     }
 
 
@@ -413,20 +449,21 @@ footer p {
     main section {
         padding: 17px; /* Reduces section padding */
         margin-bottom: 16px; /* Reduces space between sections */
+        min-width: 0; /* Prevents overflow */
     }
 
 
     /* Keeps the two images side by side on mobile */
     main section:has(img:nth-of-type(2)) {
-        grid-template-columns: 1fr 1fr; /* Keeps two equal columns */
+        grid-template-columns: 1fr 1fr; /* Keeps two columns */
         gap: 5px; /* Reduces the gap */
     }
 
 
     /* Makes the two images 130px on mobile */
     main section:has(img:nth-of-type(2)) img {
-        width: 130px; /* Sets the mobile image width */
-        height: 130px; /* Sets the mobile image height */
+        width: 130px; /* Sets mobile image width */
+        height: 130px; /* Sets mobile image height */
         max-width: 100%; /* Prevents overflow */
     }
 
@@ -434,6 +471,15 @@ footer p {
     /* Keeps the heading on the left */
     main section:has(img:nth-of-type(2)) h2 {
         text-align: left; /* Keeps the heading left-aligned */
+    }
+
+
+    /* Adjusts code blocks on mobile */
+    main pre {
+        max-width: 100%; /* Prevents code from leaving the section */
+        overflow-x: auto; /* Allows horizontal scrolling if needed */
+        white-space: pre-wrap; /* Wraps long code */
+        overflow-wrap: anywhere; /* Breaks long code */
     }
 
 
