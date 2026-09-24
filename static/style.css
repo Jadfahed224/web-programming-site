@@ -1,32 +1,32 @@
 /* :root stores reusable values (variables) for the whole stylesheet */
 :root {
-    --color-red: #e10600; /* Main red color */
-    --color-red-dark: #b00000; /* Darker red color */
-    --color-red-heading: #c00000; /* Red used for headings */
+    --color-red: #e10600;
+    --color-red-dark: #b00000;
+    --color-red-heading: #c00000;
 
-    --color-black: #111111; /* Main black color */
-    --color-nav: #1c1c1c; /* Navigation background color */
-    --color-white: #ffffff; /* White color */
-    --color-background: #f7f7f7; /* Main page background */
-    --color-text: #171717; /* Main text color */
-    --color-light-gray: #dddddd; /* Light gray color */
-    --color-border: #e1e1e1; /* Normal border color */
-    --color-border-light: #eeeeee; /* Lighter border color */
+    --color-black: #111111;
+    --color-nav: #1c1c1c;
+    --color-white: #ffffff;
+    --color-background: #f7f7f7;
+    --color-text: #171717;
+    --color-light-gray: #dddddd;
+    --color-border: #e1e1e1;
+    --color-border-light: #eeeeee;
 
-    --font-heading: Arial, Helvetica, sans-serif; /* Font for headings */
-    --font-body: Arial, Helvetica, sans-serif; /* Font for normal text */
+    --font-heading: Arial, Helvetica, sans-serif;
+    --font-body: Arial, Helvetica, sans-serif;
 
-    --space-xs: 4px; /* Extra small spacing */
-    --space-sm: 6px; /* Small spacing */
-    --space-md: 10px; /* Medium spacing */
-    --space-lg: 20px; /* Large spacing */
-    --space-xl: 28px; /* Extra large spacing */
+    --space-xs: 4px;
+    --space-sm: 6px;
+    --space-md: 10px;
+    --space-lg: 20px;
+    --space-xl: 28px;
 
-    --radius-sm: 7px; /* Small rounded corners */
-    --radius-md: 8px; /* Medium rounded corners */
-    --radius-lg: 12px; /* Large rounded corners */
+    --radius-sm: 7px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
 
-    --container-width: 900px; /* Maximum content width */
+    --container-width: 900px;
 }
 
 
@@ -34,28 +34,28 @@
 
 /* Selects every HTML element */
 * {
-    box-sizing: border-box; /* Includes padding and border inside the element's width */
+    box-sizing: border-box;
 }
 
 
 /* Styles the HTML document */
 html {
-    scroll-behavior: smooth; /* Makes scrolling smooth */
+    scroll-behavior: smooth;
 }
 
 
 /* Styles the entire page body */
 body {
-    margin: 0; /* Removes the default outside margin */
-    font-family: var(--font-body); /* Uses the body font variable */
-    font-size: 16px; /* Sets the normal text size */
-    line-height: 1.6; /* Sets spacing between lines */
-    color: var(--color-text); /* Sets the text color */
-    background: var(--color-background); /* Sets the page background */
-    min-height: 100vh; /* Makes the body at least the full screen height */
-    display: flex; /* Enables Flexbox layout */
-    flex-direction: column; /* Arranges direct children vertically */
-    overflow-x: hidden; /* Hides horizontal overflow */
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 
@@ -63,29 +63,29 @@ body {
 
 /* Selects the header element */
 header {
-    background: var(--color-black); /* Sets the header background to black */
-    color: var(--color-white); /* Makes header text white */
-    padding: 28px 20px; /* Adds 28px vertical and 20px horizontal inner space */
-    text-align: center; /* Centers the text */
-    border-bottom: 4px solid var(--color-red); /* Adds a red bottom border */
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 28px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--color-red);
 }
 
 
 /* Selects h1 elements inside the header */
 header h1 {
-    margin: 0; /* Removes the heading's default margin */
-    font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 32px; /* Sets the heading size */
-    font-weight: 900; /* Makes the heading very bold */
-    line-height: 1.25; /* Controls the heading's line spacing */
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.25;
 }
 
 
 /* Selects paragraphs inside the header */
 header p {
-    margin: 6px 0 0; /* Adds 6px top margin, 0 left/right, and 0 bottom */
-    font-size: 15px; /* Sets paragraph text size */
-    color: var(--color-light-gray); /* Makes the text light gray */
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: var(--color-light-gray);
 }
 
 
@@ -93,48 +93,48 @@ header p {
 
 /* Selects the navigation bar */
 nav {
-    background: var(--color-nav); /* Sets the navigation background */
-    padding: 10px 15px; /* Adds inner space around the navigation */
+    background: var(--color-nav);
+    padding: 10px 15px;
 }
 
 
 /* Selects unordered lists inside navigation */
 nav ul {
-    list-style: none; /* Removes the list bullets */
-    margin: 0; /* Removes outside margin */
-    padding: 0; /* Removes inside padding */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-    display: flex; /* Arranges list items using Flexbox */
-    justify-content: center; /* Centers items horizontally */
-    align-items: center; /* Aligns items vertically */
-    flex-wrap: wrap; /* Allows items to move to another line */
-    gap: 6px; /* Adds 6px space between items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 
 /* Selects links inside navigation */
 nav a {
-    display: block; /* Makes the link behave like a block */
-    padding: 7px 10px; /* Makes the buttons smaller */
-    font-size: 14px; /* Makes the button text slightly smaller */
-    color: var(--color-white); /* Makes link text white */
-    text-decoration: none; /* Removes the underline */
-    font-weight: bold; /* Makes link text bold */
-    border-radius: var(--radius-sm); /* Rounds the link corners */
+    display: block;
+    padding: 7px 10px;
+    font-size: 14px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: var(--radius-sm);
 
-    transition: /* Makes the following property changes smooth */
-        background-color 0.2s ease, /* Smooth background color change */
-        color 0.2s ease, /* Smooth text color change */
-        transform 0.2s ease; /* Smooth movement */
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
 /* Applies when a navigation link is hovered or focused */
 nav a:hover,
 nav a:focus {
-    background: var(--color-red); /* Changes the background to red */
-    color: var(--color-white); /* Keeps the text white */
-    transform: translateY(-2px); /* Moves the link up 2px */
+    background: var(--color-red);
+    color: var(--color-white);
+    transform: translateY(-2px);
 }
 
 
@@ -142,11 +142,11 @@ nav a:focus {
 
 /* Selects the main content element */
 main {
-    width: 100%; /* Allows main to use the available width */
-    max-width: var(--container-width); /* Limits its width to 900px */
-    margin: 35px auto; /* Adds 35px top/bottom and centers horizontally */
-    padding: 0 20px; /* Adds 20px left/right inner space */
-    flex: 1; /* Lets main take available space in the Flexbox layout */
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 35px auto;
+    padding: 0 20px;
+    flex: 1;
 }
 
 
@@ -154,17 +154,17 @@ main {
 
 /* Selects h1 elements that are direct children of main */
 main > h1 {
-    margin-top: 0; /* Removes the default top margin */
-    margin-bottom: 25px; /* Adds space below the title */
-    font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 30px; /* Sets the title size */
-    line-height: 1.25; /* Controls line spacing */
-    font-weight: 800; /* Makes the title very bold */
-    color: var(--color-text); /* Sets the title color */
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: var(--font-heading);
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: var(--color-text);
 
-    padding-bottom: var(--space-sm); /* Adds 6px below the title text */
-    border-bottom: 3px solid var(--color-red); /* Adds a red line below the title */
-    text-align: center; /* Centers the page title */
+    padding-bottom: var(--space-sm);
+    border-bottom: 3px solid var(--color-red);
+    text-align: center;
 }
 
 
@@ -172,55 +172,55 @@ main > h1 {
 
 /* Selects section elements inside main */
 main section {
-    background: var(--color-white); /* Makes the section background white */
-    padding: 20px 22px; /* Adds inner space */
-    margin-bottom: 20px; /* Adds space below each section */
+    background: var(--color-white);
+    padding: 20px 22px;
+    margin-bottom: 20px;
 
-    border: 1px solid var(--color-border); /* Adds a thin border */
-    border-left: 5px solid var(--color-red); /* Adds a thicker red left border */
-    border-radius: var(--radius-md); /* Rounds the section corners */
+    border: 1px solid var(--color-border);
+    border-left: 5px solid var(--color-red);
+    border-radius: var(--radius-md);
 
-    transition: /* Makes section effects smooth */
-        transform 0.2s ease, /* Smooth movement */
-        box-shadow 0.2s ease; /* Smooth shadow change */
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
 /* Places two images side by side only in a section containing two images */
 main section:has(img:nth-of-type(2)) {
-    display: grid; /* Uses CSS Grid for the section */
-    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
-    align-items: center; /* Centers items vertically */
-    gap: 10px; /* Adds space between grid items */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
 }
 
 
 /* Styles the images in the section containing two images */
 main section:has(img:nth-of-type(2)) img {
-    display: block; /* Makes the images block elements */
-    width: 150px; /* Makes the images smaller */
-    height: 150px; /* Makes the images smaller */
-    margin: 0 auto; /* Centers each image in its column */
+    display: block;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
 }
 
 
 /* Makes the heading span both columns */
 main section:has(img:nth-of-type(2)) h2 {
-    grid-column: 1 / 3; /* Makes the heading use both columns */
-    text-align: left; /* Keeps the heading on the left */
+    grid-column: 1 / 3;
+    text-align: left;
 }
 
 
 /* Makes the paragraph span both columns */
 main section:has(img:nth-of-type(2)) p {
-    grid-column: 1 / 3; /* Makes the paragraph use both columns */
+    grid-column: 1 / 3;
 }
 
 
 /* Applies when the mouse is over a section */
 main section:hover {
-    transform: translateY(-2px); /* Moves the section up 2px */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adds a soft shadow */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -228,14 +228,14 @@ main section:hover {
 
 /* Selects h2 elements inside main */
 main h2 {
-    margin-top: 0; /* Removes the heading's default top margin */
-    margin-bottom: 15px; /* Adds space below the heading */
-    font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 23px; /* Sets the heading size */
-    line-height: 1.3; /* Controls the heading line spacing */
-    font-weight: 800; /* Makes the heading very bold */
-    color: var(--color-text); /* Sets the heading color */
-    text-align: left; /* Keeps section headings on the left */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    font-size: 23px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: var(--color-text);
+    text-align: left;
 }
 
 
@@ -243,13 +243,13 @@ main h2 {
 
 /* Selects h3 elements inside main */
 main h3 {
-    margin-top: 0; /* Removes the default top margin */
-    margin-bottom: 5px; /* Adds a little space below */
-    font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 18px; /* Sets the subtitle size */
-    line-height: 1.3; /* Controls the subtitle line spacing */
-    font-weight: 700; /* Makes the subtitle bold */
-    color: var(--color-red-heading); /* Makes the subtitle red */
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--color-red-heading);
 }
 
 
@@ -257,17 +257,17 @@ main h3 {
 
 /* Selects article elements inside main */
 main article {
-    padding-bottom: 15px; /* Adds inner space below the article */
-    margin-bottom: 15px; /* Adds outside space below the article */
-    border-bottom: 1px solid var(--color-border-light); /* Adds a thin bottom line */
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--color-border-light);
 }
 
 
 /* Selects an article that is the last child of its parent */
 main article:last-child {
-    border-bottom: none; /* Removes the bottom border */
-    margin-bottom: 0; /* Removes bottom margin */
-    padding-bottom: 0; /* Removes bottom padding */
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 
@@ -275,8 +275,8 @@ main article:last-child {
 
 /* Selects paragraphs inside main */
 main p {
-    margin-top: 5px; /* Adds a small top margin */
-    margin-bottom: 10px; /* Adds space below paragraphs */
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 
@@ -284,17 +284,17 @@ main p {
 
 /* Selects links inside main */
 main a {
-    color: var(--color-red-dark); /* Makes links dark red */
-    font-weight: 600; /* Makes links semi-bold */
+    color: var(--color-red-dark);
+    font-weight: 600;
 
-    transition: color 0.2s ease; /* Smoothly changes link color */
+    transition: color 0.2s ease;
 }
 
 
 /* Applies when a main link is hovered or focused */
 main a:hover,
 main a:focus {
-    color: var(--color-red); /* Changes the link to brighter red */
+    color: var(--color-red);
 }
 
 
@@ -303,13 +303,13 @@ main a:focus {
 /* Selects ordered and unordered lists inside main */
 main ul,
 main ol {
-    padding-left: 25px; /* Indents the list from the left */
+    padding-left: 25px;
 }
 
 
 /* Selects list items inside main */
 main li {
-    margin-bottom: 8px; /* Adds space below each list item */
+    margin-bottom: 8px;
 }
 
 
@@ -317,20 +317,20 @@ main li {
 
 /* Selects the footer */
 footer {
-    background: var(--color-black); /* Makes the footer black */
-    color: var(--color-white); /* Makes footer text white */
-    text-align: center; /* Centers footer text */
-    padding: 20px; /* Adds inner space */
-    margin-top: 20px; /* Adds space above the footer */
-    border-top: 4px solid var(--color-red); /* Adds a red top border */
+    background: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 4px solid var(--color-red);
 }
 
 
 /* Selects paragraphs inside the footer */
 footer p {
-    margin: 4px 0; /* Adds 4px top/bottom and 0 left/right margin */
-    font-size: 14px; /* Makes footer text smaller */
-    color: var(--color-light-gray); /* Makes footer text light gray */
+    margin: 4px 0;
+    font-size: 14px;
+    color: var(--color-light-gray);
 }
 
 
@@ -341,105 +341,113 @@ footer p {
 
     /* Adjusts the header on smaller screens */
     header {
-        padding: 22px 15px; /* Reduces header inner space */
+        padding: 22px 15px;
     }
 
 
     /* Adjusts the header title */
     header h1 {
-        font-size: 25px; /* Makes the title smaller */
+        font-size: 25px;
     }
 
 
     /* Adjusts the header paragraph */
     header p {
-        font-size: 14px; /* Makes the paragraph smaller */
+        font-size: 14px;
     }
 
 
-    /* Adjusts navigation padding */
+    /* Makes the navigation horizontally scrollable */
     nav {
-        padding: 8px 10px; /* Reduces navigation inner space */
+        padding: 8px 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
 
-    /* Changes navigation list layout */
+    /* Keeps navigation buttons in one row */
     nav ul {
-        flex-direction: column; /* Stacks navigation items vertically */
-        gap: 4px; /* Reduces space between items */
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 6px;
+        width: max-content;
     }
 
 
-    /* Makes navigation list items full width */
+    /* Keeps each navigation item at its natural width */
     nav li {
-        width: 100%; /* Uses the full available width */
+        width: auto;
+        flex-shrink: 0;
     }
 
 
-    /* Makes navigation links full width */
+    /* Keeps navigation links in one line */
     nav a {
-        width: 100%; /* Makes each link stretch across its container */
-        text-align: center; /* Centers the link text */
-        padding: 7px 10px; /* Keeps mobile buttons slightly smaller */
-        font-size: 14px; /* Keeps mobile text smaller */
+        width: auto;
+        white-space: nowrap;
+        text-align: center;
+        padding: 7px 10px;
+        font-size: 14px;
     }
 
 
     /* Adjusts main content spacing */
     main {
-        margin: 25px auto; /* Reduces top/bottom margin */
-        padding: 0 15px; /* Reduces left/right padding */
+        margin: 25px auto;
+        padding: 0 15px;
     }
 
 
     /* Adjusts the main page title */
     main > h1 {
-        font-size: 26px; /* Makes the title smaller */
+        font-size: 26px;
     }
 
 
     /* Adjusts section spacing */
     main section {
-        padding: 17px; /* Reduces inner space */
-        margin-bottom: 16px; /* Reduces space between sections */
+        padding: 17px;
+        margin-bottom: 16px;
     }
 
 
     /* Keeps two images side by side on smaller screens */
     main section:has(img:nth-of-type(2)) {
-        grid-template-columns: 1fr 1fr; /* Keeps two equal columns */
-        gap: 5px; /* Reduces the space between images */
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
     }
 
 
-    /* Prevents images from overflowing on smaller screens */
+    /* Makes images slightly larger on mobile */
     main section:has(img:nth-of-type(2)) img {
-        width: 130px; /* Makes images smaller on mobile */
-        height: 130px; /* Makes images smaller on mobile */
-        max-width: 100%; /* Prevents images from overflowing */
+        width: 110px;
+        height: 110px;
+        max-width: 100%;
     }
 
 
     /* Keeps the heading on the left */
     main section:has(img:nth-of-type(2)) h2 {
-        text-align: left; /* Keeps the heading left-aligned */
+        text-align: left;
     }
 
 
     /* Adjusts section titles */
     main h2 {
-        font-size: 21px; /* Makes h2 smaller */
+        font-size: 21px;
     }
 
 
     /* Adjusts subtitles */
     main h3 {
-        font-size: 17px; /* Makes h3 smaller */
+        font-size: 17px;
     }
 
 
     /* Adjusts the footer */
     footer {
-        padding: 17px 12px; /* Reduces footer padding */
+        padding: 17px 12px;
     }
 }
