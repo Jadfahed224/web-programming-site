@@ -24,8 +24,9 @@
 }
 
 
-/* Page headings */
-h2 {
+/* Form page heading */
+/* More specific than main h2 in style.css */
+main h2 {
     max-width: var(--container-width);
     margin: 25px auto 6px;
     padding: 0 20px 5px;
@@ -38,8 +39,9 @@ h2 {
 }
 
 
-/* Page description */
-h2 + p {
+/* Form page description */
+/* More specific than main p in style.css */
+main h2 + p {
     max-width: var(--container-width);
     margin: 0 auto 15px;
     padding: 0 20px;
@@ -250,8 +252,9 @@ input[type="reset"]:focus {
 /* Mobile */
 @media (max-width: 700px) {
 
-    /* Page heading */
-    h2 {
+    /* Form page heading */
+    /* More specific than main h2 in style.css */
+    main h2 {
         margin-top: 20px;
         padding: 0 15px 5px;
         font-size: 26px;
@@ -259,8 +262,9 @@ input[type="reset"]:focus {
     }
 
 
-    /* Page description */
-    h2 + p {
+    /* Form page description */
+    /* More specific than main p in style.css */
+    main h2 + p {
         margin-bottom: 10px;
         padding: 0 15px;
         overflow-wrap: anywhere;
