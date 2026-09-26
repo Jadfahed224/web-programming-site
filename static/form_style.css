@@ -593,9 +593,18 @@ input[type="reset"]:focus {
 
 
     /* Date fields */
-    #birthdate,
-    #MeetingDate {
+    #birthdate {
         width: 170px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    #MeetingDate {
+        display: inline-block;
+        vertical-align: middle;
+        width: 160px;
         max-width: calc(100% - 10px);
         font-size: 14px;
         padding: 8px 9px;
