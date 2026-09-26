@@ -585,7 +585,7 @@ input[type="reset"]:focus {
 
 
     #TeamSize {
-        width: 220px;
+        width: 280px;
         max-width: calc(100% - 10px);
         font-size: 14px;
         padding: 8px 9px;
@@ -676,6 +676,21 @@ input[type="reset"]:focus {
     }
 
 
+    /* Mobile Name */
+    label[for="FullName"] {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 6px;
+    }
+
+    #FullName {
+        display: inline-block;
+        vertical-align: middle;
+        width: 220px;
+        max-width: calc(100% - 70px);
+    }
+
+
     /* Mobile inline labels */
     label[for="StdId"],
     label[for="phone"],
@@ -694,7 +709,6 @@ input[type="reset"]:focus {
 
 
     /* Mobile long-field labels */
-    label[for="FullName"],
     label[for="email"],
     label[for="GithubUrl"],
     label[for="RenderLink"],
