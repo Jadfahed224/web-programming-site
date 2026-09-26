@@ -42,7 +42,7 @@
 
     <label for="EngMajor">Engineering Major:</label>
     <select id="EngMajor" name="major" required>
-        <option value="">--Select your major--</option>
+        <option disabled selected>--Select your major--</option>
         <option value="Computer">Computer Engineering</option>
         <option value="Electrical">Electrical Engineering</option>
         <option value="Telecom">Telecom Engineering</option>
@@ -73,9 +73,9 @@
     <fieldset>
             <legend>Have you completed an engineering internship?</legend>
 
-        <input type="radio" id="InternshipYes" name="internship_completed" value="Yes" required>
+        <input type="radio" id="InternshipYes" name="internship_completed" value="Yes">
         <label for="InternshipYes">Yes</label>
-        <input type="radio" id="InternshipNo" name="internship_completed" value="No" required>
+        <input type="radio" id="InternshipNo" name="internship_completed" value="No">
         <label for="InternshipNo">No</label><br>
     </fieldset>
 
@@ -117,7 +117,7 @@
 
     <label for="EngSoftwareUsed">Engineering Software Used:</label>
     <select id="EngSoftwareUsed" name="software" multiple required>
-        <option value="selection">Select software used</option>
+        <option disabled selected>Select software used</option>
         <option value="MATLAB">MATLAB</option>
         <option value="LabVIEW">LabVIEW</option>
         <option value="AutoCAD">AutoCAD</option>
@@ -135,11 +135,11 @@
 <fieldset>
         <legend>Final Year Project</legend>
     <label for="ProjectTitle">Proposed Project Title:</label>
-    <input type="text" id="ProjectTitle" name="project_title" placeholder="Enter a tentative project title"><br><br>
+    <input type="text" id="ProjectTitle" name="project_title" placeholder="Enter a tentative project title" required><br><br>
 
     <label for="ProjectArea">Preferred Project Area:</label>
     <select id="ProjectArea" name="project_area" required>
-        <option value="">--Select your preferred project area--</option>
+        <option value="" disabled selected>--Select your preferred project area--</option>
         <optgroup label="Computer Engineering">
             <option value="AI">Artificial Intelligence</option>
             <option value="Web Applications">Web Applications</option>
@@ -163,13 +163,13 @@
     </select><br><br>
 
     <label for="ProjectDescription">Project Description:</label>
-    <textarea id="ProjectDescription" name="description" rows="4" cols="40" placeholder="Describe the problem, proposed solution, and expected outcome" required></textarea><br><br>
+    <textarea id="ProjectDescription" name="description" rows="4" cols="40" placeholder="Describe the problem, proposed solution, and expected outcome"></textarea><br><br>
 
     <label for="TeamSize">Preferred Team Size:</label>
     <input type="number" id="TeamSize" name="team_size" min="1" max="5" placeholder="Enter the number of team members" required><br><br>
 
     <label for="ProjDashboardColor">Project Dashboard Color:</label>
-    <input type="color" id="ProjDashboardColor" name="project_color"  required><br><br>
+    <input type="color" id="ProjDashboardColor" name="project_color" required><br><br>
     
     <label for="MeetingDate">Preferred Meeting Date:</label>
     <input type="date" id="MeetingDate" name="meeting_date" placeholder="yyyy-mm-dd" min="2026-09-01" max="2040-01-01" required><br><br>
