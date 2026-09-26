@@ -25,7 +25,6 @@
 
 
 /* Form page heading */
-/* More specific than main h2 in style.css */
 main h2 {
     max-width: var(--container-width);
     margin: 25px auto 6px;
@@ -40,7 +39,6 @@ main h2 {
 
 
 /* Form page description */
-/* More specific than main p in style.css */
 main h2 + p {
     max-width: var(--container-width);
     margin: 0 auto 15px;
@@ -64,7 +62,7 @@ form {
 }
 
 
-/* Keeps form line breaks working */
+/* Keeps line breaks working */
 form br {
     display: block;
 }
@@ -107,6 +105,7 @@ label {
 }
 
 
+/* Strong labels */
 label[for="ExpectedGraduation"],
 label[for="Internship"],
 label[for="experience"] {
@@ -115,16 +114,11 @@ label[for="experience"] {
 }
 
 
-/* Text inputs, selects and textarea */
+/* Large text fields */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="url"],
-input[type="number"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="color"],
 input[list],
 select,
 textarea {
@@ -142,11 +136,251 @@ textarea {
 }
 
 
-/* Color input */
+/* Number fields */
+input[type="number"] {
+    width: 140px;
+    max-width: 100%;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Date fields */
+input[type="date"] {
+    width: 180px;
+    max-width: 100%;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Month fields */
+input[type="month"] {
+    width: 180px;
+    max-width: 100%;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Time fields */
+input[type="time"] {
+    width: 140px;
+    max-width: 100%;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Dashboard color */
 input[type="color"] {
+    display: inline-block;
+    width: 60px;
     height: 38px;
     padding: 3px;
+    box-sizing: border-box;
     cursor: pointer;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+
+/* Keeps smaller questions and inputs on the same line */
+label[for="StdId"],
+label[for="FullName"],
+label[for="phone"],
+label[for="email"],
+label[for="birthdate"],
+label[for="GithubUrl"],
+label[for="RenderLink"],
+label[for="EngMajor"],
+label[for="GPA"],
+label[for="CreditsCompleted"],
+label[for="ExpectedGraduationMandY"],
+label[for="PrimaryProgLang"],
+label[for="ProjectTitle"],
+label[for="ProjectArea"],
+label[for="TeamSize"],
+label[for="ProjDashboardColor"],
+label[for="MeetingDate"],
+label[for="MeetingTime"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/* Student ID */
+#StdId {
+    display: inline-block;
+    vertical-align: middle;
+    width: 120px;
+}
+
+
+/* Name */
+#FullName {
+    display: inline-block;
+    vertical-align: middle;
+    width: 350px;
+}
+
+
+/* Phone */
+#phone {
+    display: inline-block;
+    vertical-align: middle;
+    width: 180px;
+}
+
+
+/* USEK Email */
+#email {
+    display: inline-block;
+    vertical-align: middle;
+    width: 380px;
+}
+
+
+/* Date of Birth */
+#birthdate {
+    display: inline-block;
+    vertical-align: middle;
+    width: 180px;
+}
+
+
+/* GitHub */
+#GithubUrl {
+    display: inline-block;
+    vertical-align: middle;
+    width: 350px;
+}
+
+
+/* GIN446 website */
+#RenderLink {
+    display: inline-block;
+    vertical-align: middle;
+    width: 380px;
+}
+
+
+/* Engineering Major */
+#EngMajor {
+    display: inline-block;
+    vertical-align: middle;
+    width: 260px;
+}
+
+
+/* GPA */
+#GPA {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+}
+
+
+/* Credits Completed */
+#CreditsCompleted {
+    display: inline-block;
+    vertical-align: middle;
+    width: 130px;
+}
+
+
+/* Expected Graduation Month and Year */
+#ExpectedGraduationMandY {
+    display: inline-block;
+    vertical-align: middle;
+    width: 180px;
+}
+
+
+/* Primary Programming Language */
+#PrimaryProgLang {
+    display: inline-block;
+    vertical-align: middle;
+    width: 360px;
+}
+
+
+/* Proposed Project Title */
+#ProjectTitle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 350px;
+}
+
+
+/* Preferred Project Area */
+#ProjectArea {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}
+
+
+/* Team Size */
+#TeamSize {
+    display: inline-block;
+    vertical-align: middle;
+    width: 280px;
+}
+
+
+/* Project Dashboard Color */
+#ProjDashboardColor {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 38px;
+}
+
+
+/* Meeting Date */
+#MeetingDate {
+    display: inline-block;
+    vertical-align: middle;
+    width: 180px;
+}
+
+
+/* Meeting Time */
+#MeetingTime {
+    display: inline-block;
+    vertical-align: middle;
+    width: 140px;
 }
 
 
@@ -169,6 +403,7 @@ textarea {
 
 /* Multiple select */
 select[multiple] {
+    width: 100%;
     height: 130px;
     padding: 5px;
 }
@@ -253,7 +488,6 @@ input[type="reset"]:focus {
 @media (max-width: 700px) {
 
     /* Form page heading */
-    /* More specific than main h2 in style.css */
     main h2 {
         margin-top: 20px;
         padding: 0 15px 5px;
@@ -263,7 +497,6 @@ input[type="reset"]:focus {
 
 
     /* Form page description */
-    /* More specific than main p in style.css */
     main h2 + p {
         margin-bottom: 10px;
         padding: 0 15px;
@@ -302,16 +535,10 @@ input[type="reset"]:focus {
     }
 
 
-    /* Text inputs */
+    /* Large fields use available mobile width */
     input[type="text"],
     input[type="email"],
-    input[type="tel"],
     input[type="url"],
-    input[type="number"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="color"],
     input[list],
     select,
     textarea {
@@ -322,14 +549,167 @@ input[type="reset"]:focus {
     }
 
 
-    /* Color input */
-    input[type="color"] {
+    /* Student ID */
+    #StdId {
+        width: 120px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    /* Phone */
+    #phone {
+        width: 180px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    /* Number fields */
+    #GPA {
+        width: 100px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    #CreditsCompleted {
+        width: 130px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    #TeamSize {
+        width: 220px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    /* Date fields */
+    #birthdate,
+    #MeetingDate {
+        width: 170px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    /* Month field */
+    #ExpectedGraduationMandY {
+        width: 170px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    /* Time field */
+    #MeetingTime {
+        width: 130px;
+        max-width: calc(100% - 10px);
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+
+    /* Color field */
+    #ProjDashboardColor {
+        width: 60px;
         height: 38px;
+    }
+
+
+    /* Mobile email */
+    #email {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Mobile GitHub */
+    #GithubUrl {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Mobile GIN446 website */
+    #RenderLink {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Mobile engineering major */
+    #EngMajor {
+        width: 240px;
+        max-width: 100%;
+    }
+
+
+    /* Mobile primary programming language */
+    #PrimaryProgLang {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Mobile proposed project title */
+    #ProjectTitle {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Mobile preferred project area */
+    #ProjectArea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Mobile inline labels */
+    label[for="StdId"],
+    label[for="phone"],
+    label[for="GPA"],
+    label[for="CreditsCompleted"],
+    label[for="birthdate"],
+    label[for="ExpectedGraduationMandY"],
+    label[for="TeamSize"],
+    label[for="ProjDashboardColor"],
+    label[for="MeetingDate"],
+    label[for="MeetingTime"] {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 6px;
+    }
+
+
+    /* Mobile long-field labels */
+    label[for="FullName"],
+    label[for="email"],
+    label[for="GithubUrl"],
+    label[for="RenderLink"],
+    label[for="EngMajor"],
+    label[for="PrimaryProgLang"],
+    label[for="ProjectTitle"],
+    label[for="ProjectArea"] {
+        display: block;
+        margin-right: 0;
     }
 
 
     /* Multiple select */
     select[multiple] {
+        width: 100%;
         height: 120px;
     }
 
@@ -343,7 +723,7 @@ input[type="reset"]:focus {
     }
 
 
-    /* Buttons */
+    /* Submit and reset buttons */
     input[type="submit"],
     input[type="reset"] {
         width: 100%;
