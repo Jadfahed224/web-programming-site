@@ -601,10 +601,18 @@ input[type="reset"]:focus {
     }
 
 
+    /* Preferred Meeting Date */
+    label[for="MeetingDate"] {
+        display: inline-block;
+        white-space: nowrap;
+        vertical-align: middle;
+        margin-right: 6px;
+    }
+
     #MeetingDate {
         display: inline-block;
         vertical-align: middle;
-        width: 160px;
+        width: 150px;
         max-width: calc(100% - 10px);
         font-size: 14px;
         padding: 8px 9px;
@@ -709,7 +717,6 @@ input[type="reset"]:focus {
     label[for="ExpectedGraduationMandY"],
     label[for="TeamSize"],
     label[for="ProjDashboardColor"],
-    label[for="MeetingDate"],
     label[for="MeetingTime"] {
         display: inline-block;
         vertical-align: middle;
