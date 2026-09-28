@@ -17,6 +17,7 @@
         <p>A live site that grows one page or feature every week.</p>
     </header>
 
+    {% block nav %}
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -28,6 +29,7 @@
             <li><a href="/research-topics">Research Topics</a></li>
         </ul>
     </nav>
+    {% endblock %}
 
     <main>
         {% block content %}{% endblock %}
