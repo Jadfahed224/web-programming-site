@@ -1,0 +1,370 @@
+/* ======================================================
+   QUIZ PAGE
+   ====================================================== */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+/* ======================================================
+   QUIZ TITLE
+   ====================================================== */
+
+.container > h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #171717;
+
+    border-bottom: 3px solid #e10600;
+}
+
+/* ======================================================
+   QUIZ AND RESULTS PANEL
+   ====================================================== */
+
+#quizPanel,
+#resultsPanel {
+    background: #ffffff;
+
+    padding: 25px;
+
+    border: 1px solid #dddddd;
+    border-left: 5px solid #e10600;
+    border-radius: 8px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ======================================================
+   PROGRESS
+   ====================================================== */
+
+#progress {
+    margin: 0 0 20px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: #b00000;
+}
+
+/* ======================================================
+   MAIN QUESTION
+   ====================================================== */
+
+#questionText {
+    margin: 0 0 22px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 700;
+
+    color: #171717;
+}
+
+/* ======================================================
+   ANSWER CHOICES
+   ====================================================== */
+
+#choices {
+    margin-top: 10px;
+}
+
+.choice {
+    display: block;
+
+    margin: 10px 0;
+    padding: 12px 14px;
+
+    background: #f7f7f7;
+
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+
+    font-size: 16px;
+    line-height: 1.4;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.choice:hover {
+    background: #eeeeee;
+    border-color: #c00000;
+}
+
+.choice input {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* ======================================================
+   NAVIGATION
+   ====================================================== */
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+button {
+    padding: 9px 16px;
+
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+
+    background: #eeeeee;
+    color: #171717;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background: #e10600;
+    color: #ffffff;
+    border-color: #e10600;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ======================================================
+   SUBMIT BUTTON
+   ====================================================== */
+
+.submit {
+    margin-top: 25px;
+
+    padding: 11px 20px;
+
+    background: #e10600;
+    color: #ffffff;
+
+    border: 1px solid #e10600;
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #b00000;
+    border-color: #b00000;
+}
+
+/* ======================================================
+   RESULTS
+   ====================================================== */
+
+#resultsPanel {
+    display: none;
+}
+
+#resultsPanel h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    color: #171717;
+}
+
+#scoreText,
+#percentageText {
+    margin: 7px 0;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#performanceText {
+    margin: 15px 0;
+
+    padding: 10px 12px;
+
+    background: #f7f7f7;
+
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+/* ======================================================
+   CORRECTION TITLE
+   ====================================================== */
+
+#resultsPanel h3 {
+    margin-top: 25px;
+    margin-bottom: 12px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #b00000;
+}
+
+/* ======================================================
+   CORRECTION
+   ====================================================== */
+
+#correction {
+    margin: 0;
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #171717;
+
+    word-wrap: break-word;
+}
+
+/* ======================================================
+   INDIVIDUAL RESULT BLOCKS
+   ====================================================== */
+
+.result-question {
+    padding: 18px 0;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.result-question:first-child {
+    padding-top: 0;
+}
+
+.result-question:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.result-question h4 {
+    margin: 0 0 18px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 700;
+
+    color: #b00000;
+}
+
+.result-question p {
+    margin: 7px 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: #171717;
+}
+
+/* ======================================================
+   MOBILE
+   ====================================================== */
+
+@media (max-width: 700px) {
+
+    .container {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    .container > h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    #quizPanel,
+    #resultsPanel {
+        padding: 18px;
+    }
+
+    #progress {
+        font-size: 14px;
+    }
+
+    #questionText {
+        font-size: 20px;
+    }
+
+    .choice {
+        padding: 11px 12px;
+        font-size: 15px;
+    }
+
+    .navigation {
+        gap: 6px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .submit {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #resultsPanel h2 {
+        font-size: 21px;
+    }
+
+    #resultsPanel h3 {
+        font-size: 18px;
+    }
+
+    #correction {
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .result-question h4 {
+        font-size: 16px;
+    }
+
+    .result-question p {
+        font-size: 14px;
+    }
+}

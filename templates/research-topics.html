@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-{% block css %} {% endblock %}
 
 {% block title %}Web Programming Research{% endblock %}
 
 {% block content %}
-<p><strong>As you can see, there is no CSS in this page but it still inherits the "base.html" file to keep the same structure as the other pages.</strong></p>
+<!-- <p><strong>As you can see, there is no CSS in this page but it still inherits the "base.html" file to keep the same structure as the other pages.</strong></p> -->
 
 <h1>Research Topics</h1>
         <p>This page contains a collection of research topics related to web programming. Each topic covers a different concept and provides useful information about its role in web development.</p>
@@ -66,42 +65,86 @@
     </section>
 
     <section>
-        <h2>3. Regular Expressions</h2>
-        <p>A regular expression, or regex, is a pattern used to find, match, or validate specific combinations of characters in text.</p>
+        <h2>3. &lt;datalist&gt; vs &lt;select&gt;</h2>
+        <p>Both elements can provide users with a list of options, but they work differently.</p>
 
         <article>
-            <h3>Common Uses</h3>
+            <h3>&lt;datalist&gt;</h3>
+            <p>The <code>&lt;datalist&gt;</code> element provides a list of suggested values for an associated <code>&lt;input&gt;</code>. The user can choose a suggestion or enter another value that is not in the list.</p>
+
+            <pre><code>&lt;label for="browser"&gt;Choose a browser:&lt;/label&gt;
+&lt;input list="browsers" id="browser"&gt;
+
+&lt;datalist id="browsers"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Edge"&gt;
+&lt;/datalist&gt;</code></pre>
+        </article>
+
+        <article>
+            <h3>&lt;select&gt;</h3>
+            <p>The <code>&lt;select&gt;</code> element creates a control containing a list of options. The user selects an available option from the list.</p>
+
+            <pre><code>&lt;label for="browser"&gt;Choose a browser:&lt;/label&gt;
+
+&lt;select id="browser"&gt;
+    &lt;option&gt;Chrome&lt;/option&gt;
+    &lt;option&gt;Firefox&lt;/option&gt;
+    &lt;option&gt;Edge&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+        </article>
+
+        <article>
+            <h3>Main Difference</h3>
+            <p><code>&lt;datalist&gt;</code> provides suggestions while still allowing the user to enter a different value. <code>&lt;select&gt;</code> provides a defined list of choices that the user selects from.</p>
+        </article>
+    </section>
+
+    <section>
+        <h2>4. JavaScript, JScript, ECMAScript + Automatic Call for a Function</h2>
+
+        <article>
+            <h3>JavaScript</h3>
+            <p>JavaScript is a programming language used to make webpages interactive and dynamic. It is mainly used in web browsers but can also run in other environments such as Node.js.</p>
+        </article>
+
+        <article>
+            <h3>JScript</h3>
+            <p>JScript was Microsoft's implementation of the ECMAScript scripting language. It was mainly used with Microsoft technologies such as Internet Explorer and is now considered a legacy technology.</p>
+        </article>
+
+        <article>
+            <h3>ECMAScript</h3>
+            <p>ECMAScript is the standardized specification that defines the core language used by JavaScript. It is maintained by Ecma International through the TC39 committee and is defined in the ECMA-262 standard.</p>
+        </article>
+
+        <article>
+            <h3>Main Difference</h3>
             <ul>
-                <li>Validate input such as email addresses or phone numbers.</li>
-                <li>Search for specific text patterns.</li>
-                <li>Extract parts of a string.</li>
-                <li>Replace matching text.</li>
+                <li><strong>JavaScript:</strong> The widely used name for the programming language.</li>
+                <li><strong>JScript:</strong> Microsoft's historical implementation of the ECMAScript standard.</li>
+                <li><strong>ECMAScript:</strong> The standardized specification that defines the core language.</li>
             </ul>
         </article>
 
         <article>
-            <h3>Basic Example</h3>
-            <pre><code>const pattern = /^\d+$/;</code></pre>
-            <p>This pattern matches a string containing only digits.</p>
-        </article>
+            <h3>Automatic Call for a Function</h3>
+            <p>A function normally runs when it is called.</p>
 
-        <article>
-            <h3>Common Symbols</h3>
-            <ul>
-                <li><strong><code>.</code>:</strong> Matches a character.</li>
-                <li><strong><code>\d</code>:</strong> Matches a digit.</li>
-                <li><strong><code>\w</code>:</strong> Matches a word character.</li>
-                <li><strong><code>+</code>:</strong> Matches one or more occurrences.</li>
-                <li><strong><code>*</code>:</strong> Matches zero or more occurrences.</li>
-                <li><strong><code>^</code>:</strong> Matches the beginning of a string.</li>
-                <li><strong><code>$</code>:</strong> Matches the end of a string.</li>
-            </ul>
-        </article>
+            <pre><code>function hello() {
+    console.log("Hello");
+}
 
-        <article>
-            <h3>JavaScript Example</h3>
-            <pre><code>const pattern = /hello/i;</code></pre>
-            <p>The <code>i</code> flag makes the pattern case-insensitive. JavaScript provides methods such as <code>test()</code>, <code>exec()</code>, <code>match()</code>, <code>search()</code>, and <code>replace()</code> for working with regular expressions.</p>
+hello();</code></pre>
+
+            <p>JavaScript also allows a function to be created and called immediately. This is called an <strong>Immediately Invoked Function Expression (IIFE)</strong>.</p>
+
+            <pre><code>(function () {
+    console.log("Hello");
+})();</code></pre>
+
+            <p>The function is executed immediately after it is defined. IIFEs are useful for creating a separate scope for variables and preventing unnecessary global variables.</p>
         </article>
     </section>
 
@@ -112,8 +155,13 @@
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button">HTML &lt;button&gt; Element</a> - MDN Web Docs</li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/button">HTML &lt;input type="button"&gt;</a> - MDN Web Docs</li>
             <li><a href="https://html.spec.whatwg.org/multipage/form-elements.html">HTML Living Standard</a> - WHATWG</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions">Regular Expressions</a> - MDN Web Docs</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/datalist">HTML &lt;datalist&gt; Element</a> - MDN Web Docs</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select">HTML &lt;select&gt; Element</a> - MDN Web Docs</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/JavaScript_technologies_overview">JavaScript Technologies Overview</a> - MDN Web Docs</li>
+            <li><a href="https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/j/java-jscript-javascript">Java, JScript, JavaScript</a> - Microsoft Learn</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">IIFE</a> - MDN Web Docs</li>
             <li><a href="https://tc39.es/ecma262/">ECMAScript Language Specification</a> - TC39</li>
+            <li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-262/">ECMA-262 ECMAScript Language Specification</a> - Ecma International</li>
         </ul>
     </section>
 
