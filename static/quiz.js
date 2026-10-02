@@ -17,12 +17,12 @@ const questions = [
     {
         question: "Which technology is primarily responsible for allowing a VR system to determine the user's head position and orientation?",
         choices: [
-            "A. Motion Tracking",
+            "A. Cloud storage",
             "B. Image compression",
-            "C. Cloud storage",
+            "C. Motion Tracking",
             "D. Audio encoding"
         ],
-        answer: 0,
+        answer: 2,
         explanation: "Motion tracking detects changes in the user's position and orientation so the virtual scene can respond accordingly."
     },
 
@@ -41,12 +41,12 @@ const questions = [
     {
         question: "What is the main purpose of stereoscopic rendering in VR?",
         choices: [
-            "A. To display slightly different images to each eye",
-            "B. To increase internet bandwidth",
+            "A. To increase internet bandwidth",
+            "B. To display slightly different images to each eye",
             "C. To track the user's hands",
             "D. To reduce the headset's weight"
         ],
-        answer: 0,
+        answer: 1,
         explanation: "Stereoscopic rendering provides each eye with a slightly different image, creating the perception of depth."
     },
 
@@ -65,36 +65,36 @@ const questions = [
     {
         question: "Why is consistent frame timing important in a VR system?",
         choices: [
-            "A. It helps maintain smooth visual updates and reduces noticeable stuttering",
-            "B. It increases the storage capacity of the headset",
+            "A. It increases the storage capacity of the headset",
+            "B. It helps maintain smooth visual updates and reduces noticeable stutteringIt increases the storage capacity of the headset",
             "C. It eliminates the need for motion tracking",
             "D. It allows the headset to work without a graphics processor"
         ],
-        answer: 0,
+        answer: 1,
         explanation: "Consistent frame timing helps the VR system display frames smoothly. Irregular frame delivery can cause visible stuttering and reduce the quality of the experience."
     },
 
     {
         question: "Which combination is most important for accurate and responsive VR interaction?",
         choices: [
-            "A. Motion tracking and low-latency rendering",
+            "A. Screen size and hard-drive capacity",
             "B. Storage capacity and file compression",
             "C. Keyboard layout and printer speed",
-            "D. Screen size and hard-drive capacity"
+            "D. Motion tracking and low-latency rendering"
         ],
-        answer: 0,
+        answer: 3,
         explanation: "Motion tracking detects user movement, while low-latency rendering allows the system to respond quickly to that movement."
     },
 
     {
         question: "What is the fundamental difference between VR and AR?",
         choices: [
-            "A. VR creates a simulated environment, while AR adds digital content to the real world",
+            "A. VR requires the internet, while AR never does",
             "B. VR only uses audio, while AR only uses video",
-            "C. VR requires the internet, while AR never does",
+            "C. VR creates a simulated environment, while AR adds digital content to the real world",
             "D. VR is only for entertainment, while AR is only for education"
         ],
-        answer: 0,
+        answer: 2,
         explanation: "VR immerses the user in a computer-generated environment, while AR keeps the real-world view and adds digital elements."
     },
 
@@ -113,24 +113,24 @@ const questions = [
     {
         question: "What is a major technical challenge when creating highly realistic VR environments?",
         choices: [
-            "A. Rendering complex environments quickly enough for smooth interaction",
-            "B. Increasing the number of USB ports",
+            "A. Increasing the number of USB ports",
+            "B. Rendering complex environments quickly enough for smooth interaction",
             "C. Making the keyboard larger",
             "D. Reducing the number of files on the computer"
         ],
-        answer: 0,
+        answer: 1,
         explanation: "Highly detailed environments require significant processing power while still needing fast rendering to maintain a smooth experience."
     },
 
     {
         question: "Why can VR be valuable for scientific research and experimentation?",
         choices: [
-            "A. It can provide controlled and repeatable simulated environments",
+            "A. It removes the need to collect experimental data",
             "B. It completely eliminates all experimental variables",
             "C. It guarantees identical behavior from every participant",
-            "D. It removes the need to collect experimental data"
+            "D. It can provide controlled and repeatable simulated environments"
         ],
-        answer: 0,
+        answer: 3,
         explanation: "Researchers can control aspects of a virtual environment and reproduce experimental conditions more consistently."
     }
 ];
