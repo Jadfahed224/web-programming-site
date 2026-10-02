@@ -13,7 +13,7 @@
       method="post">
 
 <fieldset>
-        <legend>1.Personal Information</legend>  
+        <legend>1.Personal Information</legend>
 
     <label for="StdId">Student ID:</label>
     <input type="text" id="StdId" name="student_id" maxlength="9" size="9" placeholder="123456789" pattern="[0-9]{9}" required><br><br>
@@ -83,7 +83,7 @@
 <fieldset>
         <legend>3.Technical Background</legend>
 
-    <label for="experience">Select all areas in which you have experience:</label>
+    <label>Select all areas in which you have experience:</label>
     <input type="checkbox" id="programming" name="skills" value="Programming">
     <label for="programming">Programming</label><br>
     <input type="checkbox" id="embedded-systems" name="skills" value="Embedded Systems">
@@ -180,6 +180,7 @@
 </fieldset>
 
 <fieldset>
+    <legend>5.User Confirmation</legend>
     <input type="checkbox" id="Confirmation" name="confirmation" required>
     <label for="Confirmation">I confirm that the information provided is accurate.</label>
 
