@@ -12,6 +12,8 @@
     --color-light-gray: #dddddd; /* Light gray color */
     --color-border: #e1e1e1; /* Normal border color */
     --color-border-light: #eeeeee; /* Lighter border color */
+    --color-link: #0066ff; /* Main link color */
+    --color-link-hover: #0047b8; /* Link hover color */
 
     --font-heading: Arial, Helvetica, sans-serif; /* Font for headings */
     --font-body: Arial, Helvetica, sans-serif; /* Font for normal text */
@@ -21,6 +23,12 @@
     --space-md: 10px; /* Medium spacing */
     --space-lg: 20px; /* Large spacing */
     --space-xl: 28px; /* Extra large spacing */
+    --space-mobile-page: 15px; /* Mobile page spacing */
+    --space-mobile-main: 25px; /* Mobile main spacing */
+    --space-mobile-section: 17px; /* Mobile section spacing */
+    --space-mobile-gap: 16px; /* Mobile section gap */
+    --space-desktop-main: 35px; /* Desktop main spacing */
+    --space-desktop-section: 20px; /* Desktop section spacing */
 
     --radius-sm: 7px; /* Small rounded corners */
     --radius-md: 8px; /* Medium rounded corners */
@@ -65,7 +73,7 @@ body {
 header {
     background: var(--color-black); /* Sets the header background */
     color: var(--color-white); /* Makes header text white */
-    padding: 28px 20px; /* Adds inner space */
+    padding: var(--space-lg) var(--space-mobile-page); /* Adds inner space */
     text-align: center; /* Centers the text */
     border-bottom: 4px solid var(--color-red); /* Adds a red bottom border */
 }
@@ -75,7 +83,7 @@ header {
 header h1 {
     margin: 0; /* Removes the default margin */
     font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 32px; /* Sets the heading size */
+    font-size: 25px; /* Sets the heading size */
     font-weight: 900; /* Makes the heading very bold */
     line-height: 1.25; /* Controls the heading line spacing */
 }
@@ -83,8 +91,8 @@ header h1 {
 
 /* Selects paragraphs inside the header */
 header p {
-    margin: 6px 0 0; /* Adds top space */
-    font-size: 15px; /* Sets paragraph text size */
+    margin: var(--space-sm) 0 0; /* Adds top space */
+    font-size: 14px; /* Sets paragraph text size */
     color: var(--color-light-gray); /* Makes the text light gray */
 }
 
@@ -94,10 +102,11 @@ header p {
 /* Selects the navigation bar */
 nav {
     background: var(--color-nav); /* Sets the navigation background */
-    padding: 10px 15px; /* Adds inner space */
+    padding: var(--space-sm) var(--space-md); /* Adds inner space */
     position: sticky; /* Keeps navigation visible while scrolling */
     top: 0; /* Sticks navigation to the top */
     z-index: 1000; /* Keeps navigation above other content */
+    overflow-x: auto; /* Allows horizontal scrolling */
 }
 
 
@@ -108,16 +117,19 @@ nav ul {
     padding: 0; /* Removes default padding */
 
     display: flex; /* Uses Flexbox */
-    justify-content: center; /* Centers navigation items */
+    justify-content: flex-start; /* Starts the row from the left */
     align-items: center; /* Aligns items vertically */
-    flex-wrap: wrap; /* Allows wrapping on desktop */
-    gap: 6px; /* Adds space between buttons */
+    flex-wrap: nowrap; /* Prevents buttons from wrapping */
+    gap: var(--space-xs); /* Adds space between buttons */
+    width: max-content; /* Allows all buttons to fit in one row */
 }
 
 
 /* Selects links inside navigation */
 nav a {
     display: block; /* Makes the link behave like a block */
+    width: auto; /* Prevents full width */
+    white-space: nowrap; /* Keeps text on one line */
     padding: 7px 10px; /* Makes the buttons smaller */
     font-size: 14px; /* Makes button text smaller */
     color: var(--color-white); /* Makes the text white */
@@ -147,8 +159,8 @@ nav a:focus {
 main {
     width: 100%; /* Allows main to use available width */
     max-width: var(--container-width); /* Limits the width to 900px */
-    margin: 35px auto; /* Centers the main content */
-    padding: 0 20px; /* Adds left and right space */
+    margin: var(--space-mobile-main) auto; /* Centers the main content */
+    padding: 0 var(--space-mobile-page); /* Adds left and right space */
     flex: 1; /* Lets main take available space */
 
     min-width: 0; /* Allows content to shrink inside its container */
@@ -167,10 +179,10 @@ main * {
 
 /* Selects h1 elements that are direct children of main */
 main > h1 {
-    margin-top: 0; /* Removes the default top margin */
-    margin-bottom: 25px; /* Adds space below the title */
+    margin-top: 0; /* Removes the default margin */
+    margin-bottom: var(--space-lg); /* Adds space below the title */
     font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 30px; /* Sets the title size */
+    font-size: 26px; /* Sets the title size */
     line-height: 1.25; /* Controls line spacing */
     font-weight: 800; /* Makes the title very bold */
     color: var(--color-text); /* Sets the title color */
@@ -186,8 +198,8 @@ main > h1 {
 /* Selects section elements inside main */
 main section {
     background: var(--color-white); /* Makes the section white */
-    padding: 20px 22px; /* Adds inner space */
-    margin-bottom: 20px; /* Adds space below each section */
+    padding: var(--space-mobile-section); /* Adds inner space */
+    margin-bottom: var(--space-mobile-gap); /* Adds space below each section */
 
     border: 1px solid var(--color-border); /* Adds a thin border */
     border-left: 5px solid var(--color-red); /* Adds a thicker red left border */
@@ -206,15 +218,16 @@ main section:has(img:nth-of-type(2)) {
     display: grid; /* Uses CSS Grid */
     grid-template-columns: 1fr 1fr; /* Creates two equal columns */
     align-items: center; /* Centers items vertically */
-    gap: 10px; /* Adds space between items */
+    gap: var(--space-xs); /* Adds space between items */
 }
 
 
 /* Styles the two images */
 main section:has(img:nth-of-type(2)) img {
     display: block; /* Makes the images block elements */
-    width: 150px; /* Sets desktop image width */
-    height: 150px; /* Sets desktop image height */
+    width: 130px; /* Sets mobile image width */
+    height: 130px; /* Sets mobile image height */
+    max-width: 100%; /* Prevents overflow */
     margin: 0 auto; /* Centers each image */
 }
 
@@ -226,9 +239,33 @@ main section:has(img:nth-of-type(2)) h2 {
 }
 
 
-/* Makes the paragraph span both columns */
+/* Makes the paragraph span both image columns */
 main section:has(img:nth-of-type(2)) p {
     grid-column: 1 / 3; /* Spans both columns */
+}
+
+
+/* Weekly Work grid styles */
+
+/* Selects the Weekly Work grid */
+.weekly-work-grid {
+    list-style: none; /* Removes list bullets */
+    margin: 0; /* Removes the default margin */
+    padding: 0; /* Removes the default padding */
+    display: grid; /* Uses CSS Grid */
+    grid-template-columns: 1fr; /* Uses one column on mobile */
+    gap: var(--space-lg); /* Adds space between grid items */
+}
+
+
+/* Styles each Weekly Work item */
+.weekly-work-item {
+    margin: 0; /* Removes the default list item margin */
+    padding: var(--space-lg); /* Adds inner space */
+    background: var(--color-background); /* Sets the card background */
+    border: 1px solid var(--color-border); /* Adds a thin border */
+    border-left: 5px solid var(--color-red); /* Adds a red left border */
+    border-radius: var(--radius-md); /* Rounds the card corners */
 }
 
 
@@ -250,7 +287,18 @@ main code {
 
 /* Keeps long links inside the layout */
 main a {
+    color: var(--color-link); /* Makes page links bright blue */
     overflow-wrap: anywhere; /* Breaks long URLs if necessary */
+    font-weight: 600; /* Makes links semi-bold */
+
+    transition: color 0.2s ease; /* Smoothly changes link color */
+}
+
+
+/* Applies when a main link is hovered or focused */
+main a:hover,
+main a:focus {
+    color: var(--color-link-hover); /* Changes links to darker blue */
 }
 
 
@@ -265,10 +313,10 @@ main section:hover {
 
 /* Selects h2 elements inside main */
 main h2 {
-    margin-top: 0; /* Removes the default top margin */
+    margin-top: 0; /* Removes the default margin */
     margin-bottom: 15px; /* Adds space below the heading */
     font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 23px; /* Sets the heading size */
+    font-size: 21px; /* Sets the heading size */
     line-height: 1.3; /* Controls heading line spacing */
     font-weight: 800; /* Makes the heading very bold */
     color: var(--color-text); /* Sets the heading color */
@@ -280,10 +328,10 @@ main h2 {
 
 /* Selects h3 elements inside main */
 main h3 {
-    margin-top: 0; /* Removes the default top margin */
+    margin-top: 0; /* Removes the default margin */
     margin-bottom: 5px; /* Adds space below the subtitle */
     font-family: var(--font-heading); /* Uses the heading font */
-    font-size: 18px; /* Sets the subtitle size */
+    font-size: 17px; /* Sets the subtitle size */
     line-height: 1.3; /* Controls subtitle spacing */
     font-weight: 700; /* Makes the subtitle bold */
     color: var(--color-red-heading); /* Makes the subtitle red */
@@ -317,24 +365,6 @@ main p {
 }
 
 
-/* Link styles */
-
-/* Selects links inside main */
-main a {
-    color: var(--color-red-dark); /* Makes links dark red */
-    font-weight: 600; /* Makes links semi-bold */
-
-    transition: color 0.2s ease; /* Smoothly changes link color */
-}
-
-
-/* Applies when a main link is hovered or focused */
-main a:hover,
-main a:focus {
-    color: var(--color-red); /* Changes the link to bright red */
-}
-
-
 /* List styles */
 
 /* Selects ordered and unordered lists inside main */
@@ -355,62 +385,58 @@ main li {
 /* Selects the footer */
 footer {
     background: var(--color-black); /* Makes the footer black */
-    color: var(--color-white); /* Makes footer text white */
+    color: var(--color-white); /* Makes the footer text white */
     text-align: center; /* Centers footer text */
-    padding: 20px; /* Adds inner space */
-    margin-top: 20px; /* Adds space above the footer */
+    padding: var(--space-lg); /* Adds inner space */
+    margin-top: var(--space-lg); /* Adds space above the footer */
     border-top: 4px solid var(--color-red); /* Adds a red top border */
 }
 
 
 /* Selects paragraphs inside the footer */
 footer p {
-    margin: 4px 0; /* Adds 4px top/bottom margin */
+    margin: var(--space-xs) 0; /* Adds 4px top/bottom margin */
     font-size: 14px; /* Makes footer text smaller */
     color: var(--color-light-gray); /* Makes footer text light gray */
 }
 
 
-/* Mobile responsive styles */
+/* Desktop responsive styles */
 
-/* Applies these styles when the screen is 700px wide or smaller */
-@media (max-width: 700px) {
+/* Applies these styles when the screen is 701px wide or larger */
+@media (min-width: 701px) {
 
-    /* Adjusts the header on smaller screens */
+    /* Adjusts the header on larger screens */
     header {
-        padding: 22px 15px; /* Reduces header spacing */
+        padding: var(--space-xl) var(--space-lg); /* Adds inner space */
     }
 
 
     /* Adjusts the header title */
     header h1 {
-        font-size: 25px; /* Makes the title smaller */
+        font-size: 32px; /* Makes the title larger */
     }
 
 
     /* Adjusts the header paragraph */
     header p {
-        font-size: 14px; /* Makes the paragraph smaller */
+        font-size: 15px; /* Makes the paragraph larger */
     }
 
 
     /* Adjusts navigation padding */
     nav {
-        padding: 8px 10px; /* Reduces navigation padding */
-        position: sticky; /* Keeps navigation sticky */
-        top: 0; /* Keeps navigation at the top */
-        z-index: 1000; /* Keeps navigation above other content */
-        overflow-x: auto; /* Allows horizontal scrolling */
+        padding: var(--space-md) 15px; /* Adds inner space */
+        overflow-x: visible; /* Removes horizontal scrolling */
     }
 
 
     /* Keeps navigation buttons in one horizontal row */
     nav ul {
-        flex-direction: row; /* Keeps the buttons in a row */
-        justify-content: flex-start; /* Starts the row from the left */
-        flex-wrap: nowrap; /* Prevents buttons from wrapping */
-        gap: 4px; /* Adds a small gap */
-        width: max-content; /* Allows all buttons to fit in one row */
+        justify-content: center; /* Centers navigation items */
+        flex-wrap: wrap; /* Allows navigation items to wrap */
+        gap: var(--space-sm); /* Adds space between buttons */
+        width: auto; /* Uses the available width */
     }
 
 
@@ -424,7 +450,6 @@ footer p {
     /* Keeps navigation links at their natural width */
     nav a {
         width: auto; /* Prevents full width */
-        white-space: nowrap; /* Keeps text on one line */
         padding: 7px 10px; /* Keeps buttons small */
         font-size: 14px; /* Keeps text small */
     }
@@ -432,39 +457,39 @@ footer p {
 
     /* Adjusts main content spacing */
     main {
-        margin: 25px auto; /* Reduces main margin */
-        padding: 0 15px; /* Reduces side padding */
-        width: 100%; /* Uses the full mobile width */
+        margin: var(--space-desktop-main) auto; /* Centers the main content */
+        padding: 0 var(--space-lg); /* Adds left and right space */
+        width: 100%; /* Uses the full available width */
         min-width: 0; /* Allows content to shrink */
     }
 
 
     /* Adjusts the main page title */
     main > h1 {
-        font-size: 26px; /* Makes the page title smaller */
+        font-size: 30px; /* Makes the page title larger */
+        margin-bottom: 25px; /* Adds space below the title */
     }
 
 
     /* Adjusts section spacing */
     main section {
-        padding: 17px; /* Reduces section padding */
-        margin-bottom: 16px; /* Reduces space between sections */
+        padding: var(--space-desktop-section) 22px; /* Adds inner space */
+        margin-bottom: var(--space-desktop-section); /* Adds space below each section */
         min-width: 0; /* Prevents overflow */
     }
 
 
-    /* Keeps the two images side by side on mobile */
+    /* Keeps the two images side by side on larger screens */
     main section:has(img:nth-of-type(2)) {
         grid-template-columns: 1fr 1fr; /* Keeps two columns */
-        gap: 5px; /* Reduces the gap */
+        gap: var(--space-md); /* Adds space between items */
     }
 
 
-    /* Makes the two images 130px on mobile */
+    /* Makes the two images 150px on larger screens */
     main section:has(img:nth-of-type(2)) img {
-        width: 130px; /* Sets mobile image width */
-        height: 130px; /* Sets mobile image height */
-        max-width: 100%; /* Prevents overflow */
+        width: 150px; /* Sets desktop image width */
+        height: 150px; /* Sets desktop image height */
     }
 
 
@@ -474,29 +499,26 @@ footer p {
     }
 
 
-    /* Adjusts code blocks on mobile */
-    main pre {
-        max-width: 100%; /* Prevents code from leaving the section */
-        overflow-x: auto; /* Allows horizontal scrolling if needed */
-        white-space: pre-wrap; /* Wraps long code */
-        overflow-wrap: anywhere; /* Breaks long code */
+    /* Makes the Weekly Work a two-column grid on larger screens */
+    .weekly-work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Creates two equal columns */
     }
 
 
     /* Adjusts section titles */
     main h2 {
-        font-size: 21px; /* Makes h2 smaller */
+        font-size: 23px; /* Makes h2 larger */
     }
 
 
     /* Adjusts subtitles */
     main h3 {
-        font-size: 17px; /* Makes h3 smaller */
+        font-size: 18px; /* Makes h3 larger */
     }
 
 
     /* Adjusts the footer */
     footer {
-        padding: 17px 12px; /* Reduces footer padding */
+        padding: var(--space-lg); /* Adds inner space */
     }
 }
