@@ -40,6 +40,8 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+from quiz_api import init_quiz
+init_quiz(app)  # add the quiz routes to this app
 
 @app.route("/")
 def home():
