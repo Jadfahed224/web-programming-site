@@ -116,7 +116,7 @@ def submit_profile_copy():
         )
 
     # First visit (GET): just show the empty form.
-    return render_template("submit-profile-copy.html")
+    return render_template("profile-form-copy.html")
 
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():

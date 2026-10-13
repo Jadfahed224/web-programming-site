@@ -168,5 +168,5 @@ editButton.addEventListener('click', function() {
 });
 
 confirmButton.addEventListener('click', function() {
-    HTMLFormElement.prototype.submit.call(form); // info about this line
+    form.submit();
 });
