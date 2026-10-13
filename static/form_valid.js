@@ -55,6 +55,7 @@ form.addEventListener('submit', function(event) {
     const confirmation = [...document.querySelectorAll('input[name="confirmation"]:checked')].map(cb => cb.value);
 
     reviewContent.textContent = "";
+
         const studentId = document.createElement("p");
         studentId.textContent = "Student ID: " + stdId;
         reviewContent.appendChild(studentId);
@@ -96,7 +97,7 @@ form.addEventListener('submit', function(event) {
         reviewContent.appendChild(creditsField);
 
         const gradField = document.createElement("p");
-        gradField.textContent = "Graduation Status: " + grad;
+        gradField.textContent = "Graduation Season: " + grad;
         reviewContent.appendChild(gradField);
 
         const expectedGradField = document.createElement("p");
@@ -104,20 +105,26 @@ form.addEventListener('submit', function(event) {
         reviewContent.appendChild(expectedGradField);
 
         const internshipField = document.createElement("p");
-        internshipField.textContent = "Internship Completed: " + internship;
+        internshipField.textContent = "Internship Completed: " + (internship || "Not selected");
         reviewContent.appendChild(internshipField);
 
-        const skillsField = document.createElement("p");
-        skillsField.textContent = "Skills: " + skills.join(", ");
-        reviewContent.appendChild(skillsField);
+        // Display each selected skill separately
+        skills.forEach(function(skill) {
+            const skillsField = document.createElement("p");
+            skillsField.textContent = "Skill: " + skill;
+            reviewContent.appendChild(skillsField);
+        });
 
         const languageField = document.createElement("p");
         languageField.textContent = "Primary Programming Language: " + language;
         reviewContent.appendChild(languageField);
 
-        const softwareField = document.createElement("p");
-        softwareField.textContent = "Engineering Software Used: " + softwareUsed.join(", ");
-        reviewContent.appendChild(softwareField);
+        // Display each selected software separately
+        softwareUsed.forEach(function(software) {
+            const softwareField = document.createElement("p");
+            softwareField.textContent = "Engineering Software: " + software;
+            reviewContent.appendChild(softwareField);
+        });
 
         const projectTitleField = document.createElement("p");
         projectTitleField.textContent = "Project Title: " + pTitle;
@@ -128,7 +135,7 @@ form.addEventListener('submit', function(event) {
         reviewContent.appendChild(projectAreaField);
 
         const projectDescField = document.createElement("p");
-        projectDescField.textContent = "Project Description: " + pDesc;
+        projectDescField.textContent = "Project Description: " + (pDesc || "Not provided");
         reviewContent.appendChild(projectDescField);
 
         const teamSizeField = document.createElement("p");
@@ -148,7 +155,7 @@ form.addEventListener('submit', function(event) {
         reviewContent.appendChild(meetingTimeField);
 
         const confirmationField = document.createElement("p");
-        confirmationField.textContent = "Confirmation: " + confirmation.join(", ");
+        confirmationField.textContent = "Confirmation: " + (confirmation ? "Confirmed" : "Not confirmed");
         reviewContent.appendChild(confirmationField);
 
         form.style.display = "none";
