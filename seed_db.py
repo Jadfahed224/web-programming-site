@@ -12,7 +12,6 @@ RUN IT:
 It creates the table if needed and inserts the questions only if the table is empty,
 so it is safe to run more than once.
 """
-
 import json
 from flask import Flask
 from quiz_api import db, Question, database_uri
