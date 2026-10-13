@@ -17,6 +17,7 @@ from flask import Flask
 from quiz_api import db, Question, database_uri
 
 QUESTIONS = [
+
     {
         "question": "Which technology is primarily responsible for allowing a VR system to determine the user's head position and orientation?",
         "choices": [
