@@ -767,7 +767,8 @@ input[type="reset"]:focus {
         overflow-wrap: anywhere;
     }
 }
-.panel {
+
+.panel { 
     display: none;
 }
 

@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Engineering Student Profile{% endblock %}
-{% block content %}
 
     {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='form_style.css') }}"/>
     {% endblock %}
+
+{% block content %}
     
     <h2>Engineering Student Profile</h2>
     <p>Complete this form to provide information about your academic background, technical skills, internship experience, and Final Year Project preferences.</p>
@@ -41,7 +42,7 @@
 
     <label for="EngMajor">Engineering Major:</label>
     <select id="EngMajor" name="major" required>
-        <option disabled selected>--Select your major--</option>
+        <option value="" disabled selected>--Select your major--</option>
         <option value="Computer">Computer Engineering</option>
         <option value="Electrical">Electrical Engineering</option>
         <option value="Telecom">Telecom Engineering</option>
@@ -59,9 +60,11 @@
             <legend>Expected Graduation:</legend>
         <input type="radio" id="ExpectedGraduationSpring" name="graduation" value="Spring" required>
         <label for="ExpectedGraduationSpring">Spring</label>
-        <input type="radio" id="ExpectedGraduationSummer" name="graduation" value="Summer" required>
+
+        <input type="radio" id="ExpectedGraduationSummer" name="graduation" value="Summer">
         <label for="ExpectedGraduationSummer">Summer</label>
-        <input type="radio" id="ExpectedGraduationFall" name="graduation" value="Fall" required>
+
+        <input type="radio" id="ExpectedGraduationFall" name="graduation" value="Fall">
         <label for="ExpectedGraduationFall">Fall</label><br>
     </fieldset>
 
@@ -72,7 +75,7 @@
     <fieldset>
             <legend>Have you completed an engineering internship?</legend>
 
-        <input type="radio" id="InternshipYes" name="internship_completed" value="Yes">
+        <input type="radio" id="InternshipYes" name="internship_completed" value="Yes" required>
         <label for="InternshipYes">Yes</label>
         <input type="radio" id="InternshipNo" name="internship_completed" value="No">
         <label for="InternshipNo">No</label><br>
@@ -117,7 +120,6 @@
 
     <label for="EngSoftwareUsed">Engineering Software Used:</label>
     <select id="EngSoftwareUsed" name="software" multiple required>
-        <option disabled selected>Select software used</option>
         <option value="MATLAB">MATLAB</option>
         <option value="LabVIEW">LabVIEW</option>
         <option value="AutoCAD">AutoCAD</option>
