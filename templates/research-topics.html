@@ -15,16 +15,16 @@
 
         <h3>Main At-Rules</h3>
         <ul>
-            <li><article><strong><code>@charset</code>:</strong> Defines the character encoding of a stylesheet.</article></li>
-            <li><article><strong><code>@color-profile</code>:</strong> Defines a color profile for advanced color management.</article></li>
+            <li><article><strong><code>@charset</code>:</strong> A legacy character-encoding declaration. Although MDN lists it alongside at-rules, it is not technically a normal CSS at-rule.</article></li>            
+            <li><article><strong><code>@color-profile</code>:</strong> Defines a color profile for advanced color management; currently unsupported by browsers.</article></li>            
             <li><article><strong><code>@container</code>:</strong> Applies styles based on the size or conditions of a container.</article></li>
             <li><article><strong><code>@counter-style</code>:</strong> Creates custom list numbering and bullet styles.</article></li>
-            <li><article><strong><code>@custom-media</code>:</strong> Defines reusable media query conditions.</article></li>
+            <li><article><strong><code>@custom-media</code>:</strong> Defines reusable media query conditions; it is experimental and has limited browser support.</article></li>            
             <li><article><strong><code>@document</code>:</strong> Applies styles based on document URLs; it is deprecated and non-standard.</article></li>
             <li><article><strong><code>@font-face</code>:</strong> Loads and defines custom fonts.</article></li>
             <li><article><strong><code>@font-feature-values</code>:</strong> Defines names for special font features.</article></li>
             <li><article><strong><code>@font-palette-values</code>:</strong> Defines color palettes for color fonts.</article></li>
-            <li><article><strong><code>@function</code>:</strong> Defines reusable custom CSS functions.</article></li>
+            <li><article><strong><code>@function</code>:</strong> Defines reusable custom CSS functions; it is experimental and has limited browser support.</article></li>            
             <li><article><strong><code>@import</code>:</strong> Imports another CSS stylesheet.</article></li>
             <li><article><strong><code>@keyframes</code>:</strong> Defines the stages of CSS animations.</article></li>
             <li><article><strong><code>@layer</code>:</strong> Organizes CSS into cascade layers.</article></li>
@@ -149,6 +149,39 @@ hello();</code></pre>
     </section>
 
     <section>
+        <h2>5. NodeList vs HTMLCollection</h2>
+        <p><code>NodeList</code> and <code>HTMLCollection</code> are array-like collections used to access nodes or elements in the DOM. Their main differences are the types of items they contain and whether they update automatically when the DOM changes.</p>
+
+        <article>
+            <h3>NodeList</h3>
+            <p>A <code>NodeList</code> is a collection of DOM nodes. It can be <strong>static or live</strong>, depending on how it is obtained. For example, <code>querySelectorAll()</code> returns a static <code>NodeList</code>, while <code>childNodes</code> returns a live <code>NodeList</code>. A static list does not automatically update its membership when the DOM changes.</p>
+
+            <pre><code>const items = document.querySelectorAll(".item");</code></pre>
+        </article>
+
+        <article>
+            <h3>HTMLCollection</h3>
+            <p>An <code>HTMLCollection</code> contains only element nodes and is <strong>live</strong>, meaning it automatically updates when relevant changes occur in the DOM.</p>
+            <pre><code>const items = document.getElementsByClassName("item");</code></pre>
+        </article>
+
+        <article>
+            <h3>Main Differences</h3>
+            <ul>
+                <li><strong>NodeList:</strong> Can be static or live; it may contain different types of DOM nodes.</li>
+                <li><strong>HTMLCollection:</strong> Is live and contains only elements.</li>
+                <li><strong>Dynamic behavior:</strong> A live collection automatically reflects relevant DOM changes, while a static <code>NodeList</code> keeps its original membership.</li>
+                <li><strong>DOM effects:</strong> Adding or removing elements, or changing their classes, can change the contents of a live collection. A static <code>NodeList</code> does not automatically update its membership.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>Conclusion</h3>
+            <p>The main difference is that an <code>HTMLCollection</code> is live, while a <code>NodeList</code> can be live or static. Understanding this behavior helps developers manage DOM elements correctly and avoid unexpected results when modifying webpages.</p>
+        </article>
+    </section>
+
+    <section>
         <h2>Reliable Sources</h2>
         <ul>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules">CSS At-Rules</a> - MDN Web Docs</li>
@@ -162,6 +195,8 @@ hello();</code></pre>
             <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">IIFE</a> - MDN Web Docs</li>
             <li><a href="https://tc39.es/ecma262/">ECMAScript Language Specification</a> - TC39</li>
             <li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-262/">ECMA-262 ECMAScript Language Specification</a> - Ecma International</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList">NodeList</a> - MDN Web Docs</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection">HTMLCollection</a> - MDN Web Docs</li>
         </ul>
     </section>
 
