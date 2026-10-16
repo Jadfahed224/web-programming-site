@@ -143,6 +143,8 @@ async function buildCorrection() {
     let result;
     if (userAnswers[i] === q.answer) {
       result = "Correct";
+    } else if (userAnswers[i] === undefined) {
+      result = "Not Answered";
     } else {
       result = "Incorrect";
     }
@@ -257,12 +259,19 @@ function showResults(score, percentage, message, correction) {
 // START APPLICATION
 // ======================================================
 async function init() {
-    const response = await fetch("/api/questions/count");
+    try {
+
+      const response = await fetch("/api/questions/count");
     if (!response.ok) {
         throw new Error("HTTP " + response.status);
     }
     const data = await response.json();
     total = data.count;
     await renderQuestion();
+} catch (error) {
+    const errorDiv = document.getElementById("error");
+    errorDiv.textContent = "Could not load questions: " + error.message;
+    errorDiv.hidden = false;
+  }
 }
 init();
