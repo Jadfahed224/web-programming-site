@@ -169,11 +169,17 @@ async function buildCorrection() {
 // SUBMIT QUIZ
 // ======================================================
 async function submitQuiz() {
-  const score = await calculateScore();
-  const percentage = calculatePercentage(score);
-  const message = getPerformanceMessage(percentage);
-  const correction = await buildCorrection();
-  showResults(score, percentage, message, correction);
+  try {
+    const score = await calculateScore();
+    const percentage = calculatePercentage(score);
+    const message = getPerformanceMessage(percentage);
+    const correction = await buildCorrection();
+      showResults(score, percentage, message, correction);
+  } catch (error) {
+    const errorDiv = document.getElementById("error");
+    errorDiv.textContent = "Could not submit quiz: " + error.message;
+    errorDiv.hidden = false;
+  }
 }
 
 async function renderQuestion() {
