@@ -1,5 +1,3 @@
-
-from dataclasses import field
 import re
 from datetime import date
 
@@ -12,7 +10,7 @@ STUDENT_ID = re.compile(r"^\d{9}$")
 FULLNAME = re.compile(r"^[A-Za-z][A-Za-z .'-]{1,79}$")
 
 # USEK institutional email
-EMAIL = re.compile(r"^[A-Za-z0-9._%+-]+@usek\.edu\.lb$")
+EMAIL = re.compile(r"^[A-Za-z0-9._%+-]+@net\.usek\.edu\.lb$")
 
 # Lebanese phone number
 PHONE = re.compile(r"^\+961\s?(?:3|70|71|76|78|79|81)\s?\d{6}$")
@@ -32,7 +30,6 @@ TIME = re.compile(r"^([01]\d|2[0-3]):[0-5]\d$")
 # Hexadecimal color: #336699
 HEXCOLOR = re.compile(r"^#[0-9A-Fa-f]{6}$")
 
-
 # --------------------------------------------------
 # 2. ALLOW-LISTS
 # Change these values to match your HTML form.
@@ -42,11 +39,44 @@ MAJORS = {"computer", "electrical", "biomedical", "telecommunications"}
 GRADUATION = {"spring", "summer", "fall"}
 YESNO = {"yes", "no"}
 
-SKILLS = {"ai", "html", "css", "javascript", "python"}
+SKILLS = {
+    "Programming",
+    "Embedded Systems",
+    "electronics",
+    "Computer Networks",
+    "Telecommunications",
+    "Biomedical Instrumentation",
+    "Artificial Intelligence / Machine Learning",
+    "Signal Processing"
+}
 
-SOFTWARE = {"matlab", "vscode", "git", "flask"}
+SOFTWARE = {
+    "MATLAB",
+    "LabVIEW",
+    "AutoCAD",
+    "SolidWorks",
+    "Multisim",
+    "PSpice",
+    "Simulink",
+    "Altium Designer",
+    "ANSYS",
+    "COMSOL Multiphysics"
+}
 
-PROJECT_AREAS = {"web", "ai", "software", "hardware"}
+PROJECT_AREAS = {
+    "AI",
+    "Web Applications",
+    "Cybersecurity",
+    "Internet of Things",
+    "Power Systems",
+    "Renewable Energy",
+    "Control Systems",
+    "Medical Imaging",
+    "Biosensors",
+    "Medical Devices",
+    "Wireless Communications",
+    "5G / 6G Networks"
+}
 
 REQUIRED = {"student_id", "fullname", "email", "major", "graduation"}
 
@@ -93,20 +123,20 @@ def validate_profile(form):
 
     # 2. Student ID
     student_id = form.get("student_id", "").strip()
-    if student_id and not STUDENT_ID.fullmatch(student_id):
+    if student_id and not STUDENT_ID.match(student_id):
         errors["student_id"] = "Student ID must be exactly 9 digits."
     cleaned["student_id"] = student_id
 
     # 3. Full name
     fullname = form.get("fullname", "").strip()
-    if fullname and not FULLNAME.fullmatch(fullname):
+    if fullname and not FULLNAME.match(fullname):
         errors["fullname"] = "Use 2-80 valid characters."
     cleaned["fullname"] = fullname
 
     # 4. USEK email
     email = form.get("email", "").strip().lower()
-    if email and not EMAIL.fullmatch(email):
-        errors["email"] = "Use your USEK email (...@usek.edu.lb)."
+    if email and not EMAIL.match(email):
+        errors["email"] = "Use your USEK email (...@net.usek.edu.lb)."
     cleaned["email"] = email
 
     # 5. Lebanese phone number
@@ -215,19 +245,19 @@ def validate_profile(form):
 
     # 18. Project title: at most 120 characters
     project_title = form.get("project_title", "").strip()
-    if len(project_title) >= 120:
+    if len(project_title) > 120:
         errors["project_title"] = "Title must be 120 characters or fewer."
     cleaned["project_title"] = project_title
 
     # 19. Project area
-    project_area = form.get("project_area", "").strip().lower()
+    project_area = form.get("project_area", "").strip()
     if project_area and project_area not in PROJECT_AREAS:
         errors["project_area"] = "Choose a valid project area."
     cleaned["project_area"] = project_area
 
     # 20. Description: at most 1000 characters
     description = form.get("description", "").strip()
-    if len(description) >= 1000:
+    if len(description) > 1000:
         errors["description"] = "Description must be 1000 characters or fewer."
     cleaned["description"] = description
 
@@ -243,7 +273,7 @@ def validate_profile(form):
     project_color = form.get("project_color", "").strip()
     if project_color !="" and not HEXCOLOR.match(project_color):
         errors["project_color"] = "Use a colour like #336699."
-    if not project_color == "":
+    if  project_color == "":
         project_color = "#336699"
     cleaned["project_color"] = project_color
 
@@ -270,32 +300,3 @@ def validate_profile(form):
 
     # Return validation errors and cleaned data
     return errors, cleaned
-
-    errors[field] = "This field is required."
-    errors["student_id"] = "Student ID must be exactly 9 digits."
-    errors["fullname"] = "Use letters, spaces, hyphens or apostrophes (2-80 chars)."
-    errors["email"] = "Use your USEK email (...@usek.edu.lb)."
-    errors["phone"] = "Enter a valid Lebanese number, e.g. +961 70 123456."
-    errors["birthdate"] = "Not a valid date."
-    errors["birthdate"] = "Date of birth cannot be in the future."
-    errors["birthdate"] = "Age looks out of range."
-    errors["portfolio"] = "Use a GitHub URL: https://github.com/username"
-    errors["gin446"] = "Enter a valid https:// link."
-    errors["major"] = "Choose a valid major."
-    errors["gpa"] = "GPA must be a number between 40 and 100."
-    errors["credits"] = "Credits must be a whole number between 0 and 148."
-    errors["graduation"] = "Choose spring, summer or fall."
-    errors["graduation_month"] = "Use the month picker (YYYY-MM)."
-    errors["internship_completed"] = "Choose yes or no."
-    errors["language"] = "Keep it under 40 characters."
-    errors["skills"] = f"Unknown skill(s): {unknown_skills}"
-    errors["software"] = f"Unknown software: {unknown_software}"
-    errors["project_title"] = "Title must be 120 characters or fewer."
-    errors["project_area"] = "Choose a valid project area."
-    errors["description"] = "Description must be 1000 characters or fewer."
-    errors["team_size"] = "Team size must be a whole number from 1 to 4."
-    errors["project_color"] = "Use a colour like #336699."
-    errors["meeting_date"] = "Not a valid date."
-    errors["meeting_time"] = "Use HH:MM."
-    errors["meeting_time"] = "Pick a time between 08:00 and 18:00."
-    errors["confirmation"] = "You must confirm the information is accurate."
