@@ -35,6 +35,7 @@ Example inside profile.html (which extends your base.html):
   <p>Skills: {{ skills | join(', ') }}</p>
   <p>Software: {{ software | join(', ') }}</p>
 """
+from validators import validate_profile 
 
 from flask import Flask, render_template, request
 
@@ -56,6 +57,7 @@ def home():
         {"week": 5, "title": "JavaScript app", "url": "/quiz"},
         {"week": 6, "title": "Form JavaScript", "url": "/submit-profile-copy"},
         {"week": 7, "title": "Quiz JavaScript", "url": "/live_quiz"},
+        {"week": 8, "title": "Validate the profile Form on the Server", "url": "/profile-validated"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
@@ -127,6 +129,27 @@ def quiz():
 def live_quiz():
     return render_template("live_quiz.html")
 
+@app.route("/profile-validated", methods=["GET", "POST"])
+def profile_validated():
+    if request.method == "POST":
+        errors, cleaned = validate_profile(request.form)
+        if errors:
+            # something's wrong -> re-show the FORM with errors + what was typed
+            return render_template(
+                "profile-form-validated.html",
+                errors=errors,
+                data=request.form,
+                sel_skills=request.form.getlist("skills"),
+                sel_software=request.form.getlist("software"),
+            )
+        # all good -> show the profile
+        return render_template("profile_validated.html", data=cleaned,
+                                skills=cleaned.get("skills", []),
+                                software=cleaned.get("software", []))
+    # first visit (GET): empty form
+    return render_template("profile-form-validated.html",
+                            errors={}, data={}, sel_skills=[], sel_software=[])
+        
 
 if __name__ == "__main__":
     app.run(debug=True)
