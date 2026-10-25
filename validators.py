@@ -1,7 +1,6 @@
 import re
 from datetime import date
 
-
 # --------------------------------------------------
 # 1. REGULAR EXPRESSION PATTERNS
 # --------------------------------------------------
@@ -101,7 +100,7 @@ def to_number(text):
 
 def to_int(text):
     try:
-        if not re.fullmatch(r"\d+", text):
+        if not re.match(r"\d+", text):
             return None
         return int(text)
     except ValueError:
@@ -141,7 +140,7 @@ def validate_profile(form):
 
     # 5. Lebanese phone number
     phone = form.get("phone", "").strip()
-    if phone and not PHONE.fullmatch(phone):
+    if phone and not PHONE.match(phone):
         errors["phone"] = "Enter a valid Lebanese phone number."
     cleaned["phone"] = phone
 
@@ -161,13 +160,13 @@ def validate_profile(form):
 
     # 7. GitHub link
     portfolio = form.get("portfolio", "").strip()
-    if portfolio and not GITHUB.fullmatch(portfolio):
+    if portfolio and not GITHUB.match(portfolio):
         errors["portfolio"] = "Use a GitHub URL: https://github.com/username"
     cleaned["portfolio"] = portfolio
 
     # 8. GIN446 website link
     gin446 = form.get("gin446", "").strip()
-    if gin446 and not HTTPS_URL.fullmatch(gin446):
+    if gin446 and not HTTPS_URL.match(gin446):
         errors["gin446"] = "Enter a valid HTTPS link."
     cleaned["gin446"] = gin446
 
