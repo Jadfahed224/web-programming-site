@@ -34,9 +34,9 @@ HEXCOLOR = re.compile(r"^#[0-9A-Fa-f]{6}$")
 # Change these values to match your HTML form.
 # --------------------------------------------------
 
-MAJORS = {"computer", "electrical", "biomedical", "telecommunications"}
-GRADUATION = {"spring", "summer", "fall"}
-YESNO = {"yes", "no"}
+MAJORS = {"computer", "Electrical", "Biomedical", "Telecommunications"}
+GRADUATION = {"Spring", "Summer", "Fall"}
+YESNO = {"Yes", "No"}
 
 SKILLS = {
     "Programming",
