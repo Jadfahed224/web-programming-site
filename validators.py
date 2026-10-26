@@ -84,36 +84,36 @@ REQUIRED = {"student_id", "fullname", "email", "major", "graduation"}
 # 3. HELPER FUNCTIONS
 # --------------------------------------------------
 
-def parse_date(text):
-    try:
-        return date.fromisoformat(text)
-    except ValueError:
-        return None
+def parse_date(text):  # Defines a function that receives a date as text.
+    try:  # Handles possible errors.
+        return date.fromisoformat(text)  # Converts the text into a date object.
+    except ValueError:  # Handles invalid date formats.
+        return None  # Returns None if conversion fails.
 
 
-def to_number(text):
-    try:
-        return float(text)
-    except ValueError:
-        return None
+def to_number(text):  # Defines a function that receives a number as text.
+    try:  # Handles possible errors.
+        return float(text)  # Converts the text into a floating-point number.
+    except ValueError:  # Handles invalid numbers.
+        return None  # Returns None if conversion fails.
 
 
-def to_int(text):
-    try:
-        if not re.match(r"\d+", text):
-            return None
-        return int(text)
-    except ValueError:
-        return None
+def to_int(text):  # Defines a function that receives an integer as text.
+    try:  # Handles possible errors.
+        if not re.match(r"\d+", text):  # Checks whether the text starts with digits.
+            return None  # Returns None if it does not start with digits.
+        return int(text)  # Converts the text into an integer.
+    except ValueError:  # Handles conversion errors.
+        return None  # Returns None if conversion fails.
 
 
 # --------------------------------------------------
 # 4. MAIN VALIDATION FUNCTION
 # --------------------------------------------------
 
-def validate_profile(form):
-    errors = {}
-    cleaned = {}
+def validate_profile(form):  # Defines a function that validates the submitted form.
+    errors = {}  # Creates a dictionary to store validation errors.
+    cleaned = {}  # Creates a dictionary to store cleaned and validated data.
 
     # 1. Required fields
     for field in REQUIRED:
