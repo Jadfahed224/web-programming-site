@@ -216,7 +216,7 @@ def validate_profile(form):  # Defines a function that validates the submitted f
     cleaned["credits"] = credits
 
     # 12. Expected graduation: spring / summer / fall
-    graduation = form.get("graduation", "").strip().lower()
+    graduation = form.get("graduation", "").strip()
     if graduation != "" and graduation not in GRADUATION:
         errors["graduation"] = "Choose spring, summer or fall."
     cleaned["graduation"] = graduation
@@ -228,7 +228,7 @@ def validate_profile(form):  # Defines a function that validates the submitted f
     cleaned["graduation_month"] = graduation_month
 
     # 14. Internship completed
-    internship = form.get("internship_completed", "").strip().lower()
+    internship = form.get("internship_completed", "").strip()
     if internship and internship not in YESNO:
         errors["internship_completed"] = "Choose yes or no."
     cleaned["internship_completed"] = internship
@@ -316,7 +316,7 @@ def validate_profile(form):  # Defines a function that validates the submitted f
 
     # 25. Confirmation
     confirmation = form.get("confirmation", "").strip()
-    if confirmation !="":
+    if confirmation =="":
         errors["confirmation"] = "You must confirm the information is accurate."
     cleaned["confirmation"] = confirmation
 
