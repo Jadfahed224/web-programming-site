@@ -99,22 +99,23 @@
         <legend>3.Technical Background</legend>
 
     <label>Select all areas in which you have experience:</label>
-    <input type="checkbox" id="programming" name="skills" value="Programming" {% if 'Programming' in sel_skills %}checked{% endif %}>Programming
+    <input type="checkbox" id="programming" name="skills" value="Programming" {% if 'Programming' in sel_skills %}checked{% endif %}>
     <label for="programming">Programming</label><br>
-    <input type="checkbox" id="embedded-systems" name="skills" value="Embedded Systems" {% if 'Embedded Systems' in sel_skills %}checked{% endif %}>Embedded Systems
+    <input type="checkbox" id="embedded-systems" name="skills" value="Embedded Systems" {% if 'Embedded Systems' in sel_skills %}checked{% endif %}>
     <label for="embedded-systems">Embedded Systems</label><br>
-    <input type="checkbox" id="electronics" name="skills" value="electronics" {% if 'electronics' in sel_skills %}checked{% endif %}>electronics
+    <input type="checkbox" id="electronics" name="skills" value="electronics" {% if 'electronics' in sel_skills %}checked{% endif %}>
     <label for="electronics">Electronics</label><br>
-    <input type="checkbox" id="computer-networks" name="skills" value="Computer Networks" {% if 'Computer Networks' in sel_skills %}checked{% endif %}>computer Networks
+    <input type="checkbox" id="computer-networks" name="skills" value="Computer Networks" {% if 'Computer Networks' in sel_skills %}checked{% endif %}>
     <label for="computer-networks">Computer Networks</label><br>
-    <input type="checkbox" id="telecommunications" name="skills" value="Telecommunications" {% if 'Telecommunications' in sel_skills %}checked{% endif %}>Telecommunications
+    <input type="checkbox" id="telecommunications" name="skills" value="Telecommunications" {% if 'Telecommunications' in sel_skills %}checked{% endif %}>
     <label for="telecommunications">Telecommunications</label><br>
-    <input type="checkbox" id="biomedical-instrumentation" name="skills" value="Biomedical Instrumentation" {% if 'Biomedical Instrumentation' in sel_skills %}checked{% endif %}>Biomedical Instrumentation
+    <input type="checkbox" id="biomedical-instrumentation" name="skills" value="Biomedical Instrumentation" {% if 'Biomedical Instrumentation' in sel_skills %}checked{% endif %}>
     <label for="biomedical-instrumentation">Biomedical Instrumentation</label><br>
-    <input type="checkbox" id="artificial-intelligence" name="skills" value="Artificial Intelligence / Machine Learning" {% if 'Artificial Intelligence / Machine Learning' in sel_skills %}checked{% endif %}>Artificial Intelligence / Machine Learning
+    <input type="checkbox" id="artificial-intelligence" name="skills" value="Artificial Intelligence / Machine Learning" {% if 'Artificial Intelligence / Machine Learning' in sel_skills %}checked{% endif %}>
     <label for="artificial-intelligence">Artificial Intelligence / Machine Learning</label><br>
-    <input type="checkbox" id="signal-processing" name="skills" value="Signal Processing" {% if 'Signal Processing' in sel_skills %}checked{% endif %}>Signal Processing
-    <label for="signal-processing">Signal Processing</label><br><br>
+    <input type="checkbox" id="signal-processing" name="skills" value="Signal Processing" {% if 'Signal Processing' in sel_skills %}checked{% endif %}>
+    <label for="signal-processing">Signal Processing</label>
+    {{ err('skills') }}<br><br>
 
     <label for="PrimaryProgLang">Primary Programming Language:</label>
     <input list="languages" id="PrimaryProgLang" name="language" placeholder="Select or type" value="{{ data.get('language', '')}}">
