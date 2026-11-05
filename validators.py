@@ -316,7 +316,7 @@ def validate_profile(form):  # Defines a function that validates the submitted f
 
     # 25. Confirmation
     confirmation = form.get("confirmation", "").strip()
-    if confirmation != "on":
+    if confirmation !="":
         errors["confirmation"] = "You must confirm the information is accurate."
     cleaned["confirmation"] = confirmation
 
