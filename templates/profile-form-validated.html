@@ -67,14 +67,16 @@
 
     <fieldset>
             <legend>Expected Graduation:</legend>
-        <input type="radio" id="ExpectedGraduationSpring" name="graduation" value="Spring" {% if data.get('graduation') == 'Spring' %}checked{% endif %}>Spring
+        <input type="radio" id="ExpectedGraduationSpring" name="graduation" value="Spring" {% if data.get('graduation') == 'Spring' %}checked{% endif %}>
         <label for="ExpectedGraduationSpring">Spring</label>
 
-        <input type="radio" id="ExpectedGraduationSummer" name="graduation" value="Summer" {% if data.get('graduation') == 'Summer' %}checked{% endif %}>Summer
+        <input type="radio" id="ExpectedGraduationSummer" name="graduation" value="Summer" {% if data.get('graduation') == 'Summer' %}checked{% endif %}>
         <label for="ExpectedGraduationSummer">Summer</label>
 
-        <input type="radio" id="ExpectedGraduationFall" name="graduation" value="Fall" {% if data.get('graduation') == 'Fall' %}checked{% endif %}>Fall
+        <input type="radio" id="ExpectedGraduationFall" name="graduation" value="Fall" {% if data.get('graduation') == 'Fall' %}checked{% endif %}>
         <label for="ExpectedGraduationFall">Fall</label><br>
+
+        {{ err('graduation') }}
     </fieldset>
 
     <label for="ExpectedGraduationMandY">Expected Graduation Month and Year:</label>
@@ -84,10 +86,12 @@
     <fieldset>
             <legend>Have you completed an engineering internship?</legend>
 
-        <input type="radio" id="InternshipYes" name="internship_completed" value="Yes" {% if data.get('internship_completed') == 'Yes' %}checked{% endif %}>Yes
+        <input type="radio" id="InternshipYes" name="internship_completed" value="Yes" {% if data.get('internship_completed') == 'Yes' %}checked{% endif %}>
         <label for="InternshipYes">Yes</label>
-        <input type="radio" id="InternshipNo" name="internship_completed" value="No" {% if data.get('internship_completed') == 'No' %}checked{% endif %}>No
+        <input type="radio" id="InternshipNo" name="internship_completed" value="No" {% if data.get('internship_completed') == 'No' %}checked{% endif %}>
         <label for="InternshipNo">No</label><br>
+
+        {{ err('internship_completed') }}
     </fieldset>
 </fieldset>
 
@@ -191,7 +195,7 @@
 
 <fieldset>
     <legend>5.User Confirmation</legend>
-    <input type="checkbox" id="Confirmation" name="confirmation" value="on" {% if 'confirm' in sel_confirmation %}checked{% endif %}>
+    <input type="checkbox" id="Confirmation" name="confirmation" {% if 'confirm' in sel_confirmation %}checked{% endif %}>
     <label for="Confirmation">I confirm that the information provided is accurate.</label>{{ err('confirmation') }}
 </fieldset>
 

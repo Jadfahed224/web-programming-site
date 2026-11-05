@@ -77,7 +77,30 @@ PROJECT_AREAS = {
     "5G / 6G Networks"
 }
 
-REQUIRED = {"student_id", "fullname", "email", "major", "graduation"}
+REQUIRED = {
+    "student_id",
+    "fullname",
+    "email",
+    "phone",
+    "birthdate",
+    "portfolio",
+    "gin446",
+    "major",
+    "gpa",
+    "credits",
+    "graduation",
+    "graduation_month",
+    "internship_completed",
+    "language",
+    "software",
+    "project_title",
+    "project_area",
+    "team_size",
+    "project_color",
+    "meeting_date",
+    "meeting_time",
+    "confirmation"
+}
 
 
 # --------------------------------------------------
@@ -171,7 +194,7 @@ def validate_profile(form):  # Defines a function that validates the submitted f
     cleaned["gin446"] = gin446
 
     # 9. Major
-    major = form.get("major", "").strip().lower()
+    major = form.get("major", "").strip()
     if major != "" and major not in MAJORS:
         errors["major"] = "Choose a valid major."
     cleaned["major"] = major
@@ -292,7 +315,7 @@ def validate_profile(form):  # Defines a function that validates the submitted f
     cleaned["meeting_time"] = meeting_time
 
     # 25. Confirmation
-    confirmation = form.get("confirmation", "").strip().lower()
+    confirmation = form.get("confirmation", "").strip()
     if confirmation != "on":
         errors["confirmation"] = "You must confirm the information is accurate."
     cleaned["confirmation"] = confirmation
