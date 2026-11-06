@@ -196,7 +196,7 @@
 
 <fieldset>
     <legend>5.User Confirmation</legend>
-    <input type="checkbox" id="Confirmation" name="confirmation" {% if 'confirm' in sel_confirmation %}checked{% endif %}>
+    <input type="checkbox" id="Confirmation" name="confirmation" {% if data.get('confirmation') %}checked{% endif %}>
     <label for="Confirmation">I confirm that the information provided is accurate.</label>{{ err('confirmation') }}
 </fieldset>
 
