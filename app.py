@@ -142,6 +142,8 @@ def profile_validated():
                 data=request.form,
                 sel_skills=request.form.getlist("skills"),
                 sel_software=request.form.getlist("software")
+                sel_confirmation=request.form.getlist("confirmation")
+
             )
 
         # Successful validation
@@ -159,6 +161,7 @@ def profile_validated():
         data={},
         sel_skills=[],
         sel_software=[]
+        sel_confirmation=[]
     )
         
 
